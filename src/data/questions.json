@@ -1,0 +1,67 @@
+[
+    {
+        "id": 1,
+        "question": "¿Alguna vez te has hablado a ti misma frente al espejo?"
+    },
+
+    {
+        "id": 2,
+        "question": "¿Alguna vez has sentido celos de [user]?"
+    },
+    {
+        "id": 3,
+        "question": "¿Alguna vez te ha atraido  [user]?"
+    },
+    {
+        "id": 4,
+        "question": "¿Alguna vez ?"
+    },
+    {
+        "id": 5,
+        "question": "¿Has visitado el último mes?"
+    },
+    {
+        "id": 6,
+        "question": "¿Te llevarías a [user] de vacaciones a solas durante una semana?"
+    },
+    {
+        "id": 7,
+        "question": "¿Alguna vez te han hecho una cobra?"
+    },
+    {
+        "id": 8,
+        "question": "¿Te han ?"
+    },
+    {
+        "id": 9,
+        "question": "¿Te gustaba jugar a los juegos de ordenador cuando eras pequeño/a?"
+    },
+    {
+        "id": 10,
+        "question": "¿Te gustaba jugar a los juegos de mesa cuando eras pequeño/a?"
+    },
+    {
+        "id": 11,
+        "question": "¿Te gustaba jugar a los juegos de ordenador cuando eras pequeño/a?"
+    },
+    {
+        "id": 12,
+        "question": "¿Te gustaba jugar a los juegos de mesa cuando eras pequeño/a?"
+    },
+    {
+        "id": 13,
+        "question": "¿Te gustaba jugar a los juegos de ordenador cuando eras pequeño/a?"
+    },
+    {
+        "id": 14,
+        "question": "¿Te gustaba jugar a los juegos de mesa cuando eras pequeño/a?"
+    },
+    {
+        "id": 15,
+        "question": "¿Te gustaba jugar a los juegos de ordenador cuando eras pequeño/a?"
+    },
+    {
+        "id": 16,
+        "question": "¿Te gustaba jugar a los juegos de mesa cuando eras pequeño/a?"
+    }
+]

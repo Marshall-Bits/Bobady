@@ -1,0 +1,42 @@
+[
+    {
+        "id": "1",
+        "challenge": "Haz un programa que imprima tu nombre"
+    },
+    {
+        "id": "2",
+        "challenge": "Haz un programa que imprima tu nombre y tu edad"
+    },
+    {
+        "id": "3",
+        "challenge": "Haz un programa que imprima tu nombre, tu edad y tu ciudad"
+    },
+    {
+        "id": "4",
+        "challenge": "Haz un programa que imprima tu nombre, tu edad y tu ciudad, pero que la edad sea un número"
+    },
+    {
+        "id": "5",
+        "challenge": "Haz un programa que imprima tu nombre, tu edad y tu ciudad, pero que la edad sea un número y que la ciudad sea una variable"
+    },
+    {
+        "id": "6",
+        "challenge": "Haz un programa que imprima tu nombre, tu edad y tu ciudad, pero que la edad sea un número y que la ciudad sea una variable y que el nombre sea una variable"
+    },
+    {
+        "id": "7",
+        "challenge": "Haz un programa que imprima tu nombre, tu edad y tu ciudad, pero que la edad sea un número y que la ciudad sea una variable y que el nombre sea una variable y que el programa sea una función"
+    },
+    {
+        "id": "8",
+        "challenge": "Haz un programa que imprima tu nombre, tu edad y tu ciudad, pero que la edad sea un número y que la ciudad sea una variable y que el nombre sea una variable y que el programa sea una función y que la función tenga un parámetro"
+    },
+    {
+        "id": "9",
+        "challenge": "Haz un programa que imprima tu nombre, tu edad y tu ciudad, pero que la edad sea un número y que la ciudad sea una variable y que el nombre sea una variable y que el programa sea una función y que la función tenga un parámetro y que el parámetro sea un objeto"
+    },
+    {
+        "id": "10",
+        "challenge": "Haz un programa que imprima tu nombre, tu edad y tu ciudad, pero que la edad sea un número y que la ciudad sea una variable y que el nombre sea una variable y que el programa sea una función y que la función tenga un parámetro y que el parámetro sea un objeto y que el objeto tenga una propiedad"
+    }
+]
