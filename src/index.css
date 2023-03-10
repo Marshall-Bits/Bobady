@@ -24,6 +24,8 @@ body {
   place-items: center;
   width: 100vw;
   min-height: 100vh;
+  background: rgb(253,29,29);
+  background: linear-gradient(0deg, rgba(253,29,29,1) 0%, rgba(252,176,69,1) 49%);
 }
 
 h1 {
@@ -38,7 +40,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #4591FC;
   cursor: pointer;
   transition: border-color 0.25s;
 }

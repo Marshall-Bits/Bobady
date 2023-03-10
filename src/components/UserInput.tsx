@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { UsersContext } from "../context/UsersContext";
 import styled from 'styled-components';
 
-const UserInputContainer = styled.div`
+const UserInputContainer = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,8 +43,7 @@ export const UserInput = () => {
     }
 
     return (
-        <UserInputContainer>
-            <form onSubmit={handleSubmit}>
+        <UserInputContainer onSubmit={handleSubmit}>
                 <input
                     type="text"
                     placeholder="Nombre"
@@ -56,7 +55,6 @@ export const UserInput = () => {
                 >
                     Agregar participante
                 </button>
-            </form>
         </UserInputContainer>
     )
 }

@@ -12,17 +12,22 @@ const ListContainer = styled.div`
     font-size: 1.5em;
     max-height: 50vh;
     overflow-y: scroll;
-    background-color: #585858;
+    background-color: #FC5445;
 
     li{
         display: flex;
         justify-content: space-between;
+        align-items: center;
+        height: 7vh;
     }
 
     button {
         font-size: 13px;
         padding: 10px;
+    }
 
+    img {
+        width: 50px;
     }
 `
 
@@ -34,7 +39,12 @@ export const UsersList = () => {
     return (
         <ListContainer>
             {users.map((user, index) => (
-                <li key={index}>{user.name}
+                <li key={index}>
+                    <img src={`https://garticphone.com/images/avatar/2${index}.svg`} alt="" />
+                        <p>
+                        {user.name}
+
+                        </p>
                     <button onClick={
                         () => {
                             dispatch({
