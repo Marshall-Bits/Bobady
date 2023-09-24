@@ -26,6 +26,7 @@ export const UserInput = () => {
     const { dispatch } = useContext(UsersContext);
 
     const handleSubmit = (e: React.SyntheticEvent) => {
+        const randomAvatar = Math.floor(Math.random() * 50);
         e.preventDefault();
         if (participantName) {
             dispatch({
@@ -34,7 +35,7 @@ export const UserInput = () => {
                     name: participantName,
                     id: new Date().getTime().toString(),
                     score: 0,
-                    avatar: '',
+                    avatar: `https://garticphone.com/images/avatar/${randomAvatar}.svg`,
                     turns: 0,
                 },
             });
