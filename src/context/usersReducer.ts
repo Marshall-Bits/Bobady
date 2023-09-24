@@ -5,7 +5,8 @@ export type IUsersAction =
     | { type: "REMOVE_USER", payload: string }
     | { type: "UPDATE_USER_POINTS", payload: { userId: string, points: number } }
     | { type: "UPDATE_TURN_ID", payload: string }
-    | { type: "UPDATE_POINTS_TO_ADD", payload: number };
+    | { type: "UPDATE_POINTS_TO_ADD", payload: number }
+    | { type: "UPDATE_USER_AVATAR_URL", payload: string };
 
 export const usersReducer = (state: IUsersState, action: IUsersAction) => {
     switch (action.type) {
@@ -51,6 +52,20 @@ export const usersReducer = (state: IUsersState, action: IUsersAction) => {
             return {
                 ...state,
                 pointsToAdd: action.payload
+            };
+        case "UPDATE_USER_AVATAR_URL":
+            return {
+                ...state,
+                users: state.users.map(user => {
+                    if (user.id === action.payload) {
+                        const randomAvatar = Math.floor(Math.random() * 40);
+                        return {
+                            ...user,
+                            avatar: `https://garticphone.com/images/avatar/${randomAvatar}.svg`
+                        };
+                    }
+                    return user;
+                })
             };
         default:
             return state;
