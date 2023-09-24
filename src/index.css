@@ -1,18 +1,9 @@
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 187.5%;
-  line-height: 24px;
-  font-weight: 400;
+  font-weight: 600;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  color: rgba(218, 218, 252, 0.87);
 }
 
 body {
@@ -22,7 +13,8 @@ body {
   place-items: center;
   width: 100vw;
   min-height: 100vh;
-  background: linear-gradient(0deg, rgba(253, 29, 29, 1) 0%, rgba(252, 176, 69, 1) 49%);
+  padding: 0 .5rem;
+  background: linear-gradient(0deg, rgb(201, 29, 253) 0%, rgb(91, 6, 203) 49%);
 }
 
 h1 {
@@ -40,13 +32,4 @@ button {
   background-color: #4591FC;
   cursor: pointer;
   transition: border-color 0.25s;
-}
-
-button:hover {
-  border-color: #646cff;
-}
-
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }

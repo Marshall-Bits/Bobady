@@ -22,6 +22,7 @@ export const Question = () => {
         const interval = setInterval(() => {
             setCount(count - 1);
         }, 1000);
+        
         return () => clearInterval(interval);
 
     }, [count]);
