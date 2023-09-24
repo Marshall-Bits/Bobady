@@ -4,11 +4,19 @@ import { UsersContext } from '../context/UsersContext';
 import questions from '../data/questions.json';
 
 export const Question = () => {
-    const { dispatch } = useContext(UsersContext);
-    const [count, setCount] = useState(3);
-    const navigate = useNavigate();
-    const randomQuestionId = useRef<number>(Math.floor(Math.random() * questions.length));
+    const { dispatch, usersState } = useContext(UsersContext);
+    const { users } = usersState;
 
+    const navigate = useNavigate();
+
+    const [count, setCount] = useState<number>(3);
+    
+    const filteredUsers = users.filter(user => user.id !== usersState.userTurnId);
+    const randomQuestionId = useRef<number>(Math.floor(Math.random() * questions.length));
+    const randomUserId = useRef<number>(Math.floor(Math.random() * filteredUsers.length));
+    const randomUser = filteredUsers[randomUserId.current];
+    const formatedQuestion = questions[randomQuestionId.current].question.replace('[user]', randomUser.name);
+    
     useEffect(() => {
         if (count >= 0) {
             dispatch({
@@ -17,19 +25,21 @@ export const Question = () => {
             });
         }
 
-        if (count === -1) navigate('/adding-points');
+        if (count === 0) navigate('/adding-points');
 
         const interval = setInterval(() => {
             setCount(count - 1);
         }, 1000);
-        
+
         return () => clearInterval(interval);
 
     }, [count]);
 
+
+
     return (
         <>
-            <h1>{questions[randomQuestionId.current].question}</h1>
+            <h1>{formatedQuestion}</h1>
             <h2>{count}</h2>
             <button onClick={() => navigate('/adding-points')} >
                 Sí</button>
