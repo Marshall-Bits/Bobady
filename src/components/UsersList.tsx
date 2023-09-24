@@ -7,12 +7,13 @@ const ListContainer = styled.div`
     flex-direction: column;
     list-style: none;
     list-style-type: none;
-    padding: 1em 10px;
+    padding: 1.5rem 1rem;
     gap: 1em;
     font-size: 1.5em;
     max-height: 50vh;
     overflow-y: scroll;
-    background-color: #FC5445;
+    background-color: #07070733;
+    border-radius: .5rem;
 
     li{
         display: flex;
@@ -27,7 +28,7 @@ const ListContainer = styled.div`
     }
 
     img {
-        width: 50px;
+        width: 2rem;
     }
 `
 
@@ -40,19 +41,26 @@ export const UsersList = () => {
         <ListContainer>
             {users.map((user, index) => (
                 <li key={index}>
-                    <img src={`https://garticphone.com/images/avatar/2${index}.svg`} alt="" />
-                        <p>
-                        {user.name}
-
-                        </p>
-                    <button onClick={
-                        () => {
+                    <img
+                        onClick={() => {
                             dispatch({
-                                type: 'REMOVE_USER',
+                                type: 'UPDATE_USER_AVATAR_URL',
                                 payload: user.id
                             })
-                        }
-                    }>Borrar</button>
+                        }}
+                        src={user.avatar} alt="user avatar" />
+                    <p>
+                        {user.name}
+                    </p>
+                    <button
+                        onClick={
+                            () => {
+                                dispatch({
+                                    type: 'REMOVE_USER',
+                                    payload: user.id
+                                })
+                            }
+                        }>Borrar</button>
                 </li>
             ))}
         </ListContainer>
