@@ -12,14 +12,17 @@ export const TrickOrTreat = () => {
     useEffect(() => {
         // exclude users with higher turns
         const usersWithLessTurns = users.filter(user => user.turns === Math.min(...users.map(user => user.turns)));
+
         if (usersWithLessTurns.length > 1) {
-            setRandomUser(usersWithLessTurns[Math.floor(Math.random() * users.length)]);
+            const randomIndex = Math.floor(Math.random() * usersWithLessTurns.length);
+            setRandomUser(usersWithLessTurns[randomIndex]);
         } else {
             setRandomUser(usersWithLessTurns[0]);
         }
     }, []);
 
     useEffect(() => {
+        console.log(randomUser);
         if (randomUser) {
             const updatedUser = { ...randomUser, turns: randomUser.turns + 1 };
             dispatch({
@@ -31,7 +34,7 @@ export const TrickOrTreat = () => {
 
     return (
         <>
-            {randomUser &&
+            {randomUser ?
                 <>
                     <h1>{randomUser.name},</h1>
                     <button onClick={() => navigate('/question')}>Pregunta</button>
@@ -39,6 +42,7 @@ export const TrickOrTreat = () => {
                     <button onClick={() => navigate('/challenge')}>Reto</button>
                     <button onClick={() => navigate('/intro')}>Back</button>
                 </>
+                : <h1>Loading...</h1>
             }
         </>
     );
