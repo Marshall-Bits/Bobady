@@ -25,7 +25,7 @@ export const AddingPoints = () => {
 
     return (
         <>
-            {userTurnId && pointsToAdd &&
+            {userTurnId && pointsToAdd !== undefined &&
                 <>
                     <h1>{user?.name} {pointsToAdd > 0 ? `+ ${pointsToAdd}` : ` ${pointsToAdd}`} puntos!</h1>
                     <h2>Total: {user?.score}</h2>
