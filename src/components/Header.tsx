@@ -1,6 +1,8 @@
 import styled from "styled-components"
 import { useContext, useEffect, useState } from "react"
 import { UsersContext } from "../context/UsersContext";
+import { IUser } from "../interfaces/interfaces";
+import { Score } from "./Score";
 
 const HeaderContainer = styled.div`
     position: fixed;
@@ -20,17 +22,7 @@ const HeaderContainer = styled.div`
         border-radius: 50%;
     }
     
-    .score {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        color: #fff;
-        font-size: .5rem;
-        font-weight: bold;
-        margin: 0;
-        background-color: #67007c86;
-        border-radius: 3px;
-    }
+ 
 
     .user-container {
         position: relative;
@@ -40,23 +32,22 @@ const HeaderContainer = styled.div`
 export const Header = () => {
     const { usersState } = useContext(UsersContext);
     const { users } = usersState;
-    const [usersByScore, setUsersByScore] = useState(users);
+    const [usersByScore, setUsersByScore] = useState<IUser[]>(users);
+
 
     useEffect(() => {
         const sortedUsers = users.sort((a, b) => b.score - a.score);
         setUsersByScore(sortedUsers);
-    }, [users])
+    }, [users]);
 
     return (
         <HeaderContainer>
-            {
-                usersByScore.map((user, index) => (
-                    <div className="user-container">
-                        <img src={user.avatar} key={index} />
-                        <p className="score">{user.score}</p>
-                    </div>
-                ))
-            }
+            {usersByScore.map((user, index) => (
+                <div className="user-container" key={index}>
+                    <img src={user.avatar} />
+                    <Score score={user.score} />
+                </div>
+            ))}
         </HeaderContainer>
-    )
-}
+    );
+};
