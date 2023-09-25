@@ -8,6 +8,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Challenge } from './pages/Challenge'
 import { Confirmation } from './pages/Confirmation'
 import { AddingPoints } from './pages/AddingPoints'
+import { Header } from './components/Header'
 
 const router = createBrowserRouter([
   { path: '/', element: <Home /> },
@@ -24,6 +25,7 @@ function App() {
   return (
     <div className="App">
       <UsersProvider>
+        <Header />
         <RouterProvider router={router} />
         {/* <a href='/'>Home</a> */}
       </UsersProvider>
