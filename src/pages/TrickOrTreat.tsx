@@ -2,6 +2,11 @@ import { useContext, useEffect, useState } from "react";
 import { UsersContext } from "../context/UsersContext";
 import { useNavigate } from "react-router";
 import { IUser } from "../interfaces/interfaces";
+import styled from "styled-components";
+
+const ImageAvatar = styled.img`
+    width: 5rem;
+`;
 
 export const TrickOrTreat = () => {
     const [randomUser, setRandomUser] = useState<IUser>();
@@ -36,6 +41,7 @@ export const TrickOrTreat = () => {
         <>
             {randomUser ?
                 <>
+                    <ImageAvatar src={randomUser.avatar} alt="user avatar" />
                     <h1>{randomUser.name},</h1>
                     <button onClick={() => navigate('/question')}>Pregunta</button>
                     <p>o</p>
