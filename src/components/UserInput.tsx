@@ -26,7 +26,7 @@ export const UserInput = () => {
     const { dispatch } = useContext(UsersContext);
 
     const handleSubmit = (e: React.SyntheticEvent) => {
-        const randomAvatar = Math.floor(Math.random() * 50);
+        const randomAvatar = Math.floor(Math.random() * 40);
         e.preventDefault();
         if (participantName) {
             dispatch({
@@ -46,6 +46,7 @@ export const UserInput = () => {
     return (
         <UserInputContainer onSubmit={handleSubmit}>
                 <input
+                    maxLength={8}
                     type="text"
                     placeholder="Nombre"
                     value={participantName}
