@@ -11,3 +11,7 @@ export interface IUsersState {
     userTurnId?: string;
     pointsToAdd?: number;
 }
+
+export interface IAvatarProps {
+    user: IUser;
+}

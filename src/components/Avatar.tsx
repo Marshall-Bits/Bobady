@@ -3,10 +3,7 @@ import { UsersContext } from '../context/UsersContext';
 import { IUser } from '../interfaces/interfaces';
 import { Spinner } from './Spinner';
 import styled from 'styled-components';
-
-interface IAvatar {
-    user: IUser;
-}
+import { IAvatarProps } from '../interfaces/interfaces';
 
 const AvatarContainer = styled.div`
     position: relative;    
@@ -32,7 +29,7 @@ const AvatarContainer = styled.div`
     }
 `
 
-export const Avatar = ({ user }: IAvatar) => {
+export const Avatar = ({ user }: IAvatarProps) => {
     const { dispatch } = useContext(UsersContext);
     const [avatarLoading, setAvatarLoading] = useState<boolean>(true);
 
