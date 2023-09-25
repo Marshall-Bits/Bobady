@@ -24,11 +24,10 @@ function App() {
   return (
     <div className="App">
       <UsersProvider>
-        <a href='/'>Home</a>
         <RouterProvider router={router} />
+        {/* <a href='/'>Home</a> */}
       </UsersProvider>
     </div>
-
   )
 }
 
