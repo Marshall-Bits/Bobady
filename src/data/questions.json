@@ -1,22 +1,126 @@
 [
     {
-        "id": "1",
-        "question": "¿Te cae bien [user]"
+        "id": 0,
+        "question": "¿Te cae bien [user]?"
     },
     {
-        "id": "2",
+        "id": 1,
         "question": "¿Te gustaría ver a [user] en plena borrachera?"
     },
     {
-        "id": "3",
+        "id": 2,
         "question": "¿Has mentido alguna vez a [user]?"
     },
     {
-        "id": "4",
+        "id": 3,
         "question": "¿Te atrae [user]?"
     },
     {
-        "id": "5",
+        "id": 4,
         "question": "¿Te acostarías con [user]?"
+    },
+    {
+        "id": 5,
+        "question": "¿Te gustaría ir a una fiesta con [user]?"
+    },
+    {
+        "id": 6,
+        "question": "¿Conoces el secreto más profundo de [user]?"
+    },
+    {
+        "id": 7,
+        "question": "¿Crees que [user] baila bien?"
+    },
+    {
+        "id": 8,
+        "question": "¿Has confiado en [user] con un secreto importante?"
+    },
+    {
+        "id": 9,
+        "question": "¿Te gusta la música que escucha [user]?"
+    },
+    {
+        "id": 10,
+        "question": "¿Crees que [user] es la persona más graciosa que conoces?"
+    },
+    {
+        "id": 11,
+        "question": "¿Consideras que [user] es de fiar?"
+    },
+    {
+        "id": 12,
+        "question": "¿Si pudieras intercambiar vidas con [user] por un día, ¿lo harías?"
+    },
+    {
+        "id": 13,
+        "question": "¿Qué harías si fueras [user] por un día?"
+    },
+    {
+        "id": 14,
+        "question": "¿Has viajado alguna vez con [user]?"
+    },
+    {
+        "id": 15,
+        "question": "¿Has tenido alguna experiencia inolvidable con [user]?"
+    },
+    {
+        "id": 16,
+        "question": "¿Consideras a [user] tu mejor amigo/a?"
+    },
+    {
+        "id": 17,
+        "question": "¿Has tenido alguna discusión importante con [user]?"
+    },
+    {
+        "id": 18,
+        "question": "¿Qué cualidades admiras más en [user]?"
+    },
+    {
+        "id": 19,
+        "question": "¿Qué cambiarías de [user] si pudieras?"
+    },
+    {
+        "id": 20,
+        "question": "¿Has enfrentado tus miedos más profundos y has intentado superarlos?"
+    },
+    {
+        "id": 21,
+        "question": "¿Sientes que estás en control de tu vida y de tus decisiones?"
+    },
+    {
+        "id": 22,
+        "question": "¿Te has perdonado a ti mismo/a por errores del pasado?"
+    },
+    {
+        "id": 23,
+        "question": "¿Sientes que estás en armonía contigo mismo/a y con tus valores personales?"
+    },
+    {
+        "id": 24,
+        "question": "¿Te sientes satisfecho/a con tu nivel de autoconocimiento?"
+    },
+    {
+        "id": 25,
+        "question": "¿Has experimentado momentos de autoduda y falta de confianza en ti mismo/a?"
+    },
+    {
+        "id": 26,
+        "question": "¿Has buscado apoyo emocional o consejería en momentos difíciles?"
+    },
+    {
+        "id": 27,
+        "question": "¿Crees que estás viviendo una vida alineada con tus valores y metas más importantes?"
+    },
+    {
+        "id": 28,
+        "question": "¿Has reflexionado sobre tu propósito en la vida y lo que te motiva a diario?"
+    },
+    {
+        "id": 29,
+        "question": "¿Tienes una comprensión clara de tus emociones y cómo influyen en tus decisiones?"
+    },
+    {
+        "id": 30,
+        "question": "¿Te gusta el baloncesto?"
     }
 ]
