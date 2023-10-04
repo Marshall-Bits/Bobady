@@ -10,25 +10,31 @@ interface UsersProviderProps {
 const INITIAL_STATE: IUsersState = {
     users: [
         {
-            id: "1",
+            id: 1,
             name: 'Juan',
             score: 0,
             avatar: 'https://garticphone.com/images/avatar/1.svg',
             turns: 0,
+            callenges: [],
+            questions: [],
         },
         {
-            id: "2",
+            id: 2,
             name: 'Pedro',
             score: 0,
             avatar: 'https://garticphone.com/images/avatar/2.svg',
             turns: 0,
+            callenges: [],
+            questions: [],
         },
         {
-            id: "3",
+            id: 3,
             name: 'Pablo',
             score: 0,
             avatar: 'https://garticphone.com/images/avatar/3.svg',
             turns: 0,
+            callenges: [],
+            questions: [],
         },
     ],
 };

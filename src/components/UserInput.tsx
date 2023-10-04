@@ -33,10 +33,12 @@ export const UserInput = () => {
                 type: 'ADD_USER',
                 payload: {
                     name: participantName,
-                    id: new Date().getTime().toString(),
+                    id: Number(new Date().getTime()),
                     score: 0,
                     avatar: `https://garticphone.com/images/avatar/${randomAvatar}.svg`,
                     turns: 0,
+                    callenges: [],
+                    questions: [],
                 },
             });
             setParticipantName('');

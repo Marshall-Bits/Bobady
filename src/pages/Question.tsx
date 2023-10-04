@@ -4,7 +4,6 @@ import { UsersContext } from '../context/UsersContext';
 import questions from '../data/questions.json';
 import styled from 'styled-components';
 
-
 const QuestionContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -23,19 +22,24 @@ const QuestionContainer = styled.div`
     }
 `
 
-
 export const Question = () => {
-    const { dispatch, usersState } = useContext(UsersContext);
-    const { users } = usersState;
-
     const navigate = useNavigate();
+    const { dispatch, usersState } = useContext(UsersContext);
+    const { users, userTurnId } = usersState;
+    const user = users.find(user => user.id === userTurnId);
 
     const [count, setCount] = useState<number>(3);
 
+    
+    
+    const usedQuestionIds = user?.questions;
+    const availableQuestionIds = questions.filter((question) => !usedQuestionIds?.includes(question.id)).map((question) => question.id);
+    const randomQuestionId = useRef<number>(availableQuestionIds[Math.floor(Math.random() * availableQuestionIds.length)]);
+    
     const filteredUsers = users.filter(user => user.id !== usersState.userTurnId);
-    const randomQuestionId = useRef<number>(Math.floor(Math.random() * questions.length));
     const randomUserId = useRef<number>(Math.floor(Math.random() * filteredUsers.length));
     const randomUser = filteredUsers[randomUserId.current];
+    
     const formatedQuestion = questions[randomQuestionId.current].question.replace('[user]', randomUser.name);
 
     useEffect(() => {
@@ -46,7 +50,7 @@ export const Question = () => {
             });
         }
 
-        if (count === 0) navigate('/adding-points');
+        if (count === 0) handleAnswer();
 
         const interval = setInterval(() => {
             setCount(count - 1);
@@ -56,16 +60,19 @@ export const Question = () => {
 
     }, [count]);
 
-
+    const handleAnswer = () => {
+        user?.questions.push(questions[randomQuestionId.current].id);
+        navigate('/adding-points')
+    }
 
     return (
         <QuestionContainer>
             <p className='question'>{formatedQuestion}</p>
             <h2>{count}</h2>
-            <button onClick={() => navigate('/adding-points')} >
+            <button onClick={() => handleAnswer()} >
                 Sí</button>
             <br />
-            <button onClick={() => navigate('/adding-points')} >
+            <button onClick={() => handleAnswer()} >
                 No</button>
         </QuestionContainer>
     );

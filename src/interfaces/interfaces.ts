@@ -1,14 +1,16 @@
 export interface IUser {
     name: string;
-    id: string;
+    id: number;
     score: number;
     avatar: string;
     turns: number;
+    callenges: number[];
+    questions: number[];
 }
 
 export interface IUsersState {
     users: IUser[];
-    userTurnId?: string;
+    userTurnId?: number;
     pointsToAdd?: number;
 }
 

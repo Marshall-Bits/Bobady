@@ -2,11 +2,11 @@ import { IUser, IUsersState } from "../interfaces/interfaces";
 
 export type IUsersAction =
     | { type: "ADD_USER", payload: IUser }
-    | { type: "REMOVE_USER", payload: string }
-    | { type: "UPDATE_USER_POINTS", payload: { userId: string, points: number } }
-    | { type: "UPDATE_TURN_ID", payload: string }
+    | { type: "REMOVE_USER", payload: number }
+    | { type: "UPDATE_USER_POINTS", payload: { userId: number, points: number } }
+    | { type: "UPDATE_TURN_ID", payload: number }
     | { type: "UPDATE_POINTS_TO_ADD", payload: number }
-    | { type: "UPDATE_USER_AVATAR_URL", payload: string };
+    | { type: "UPDATE_USER_AVATAR_URL", payload: number };
 
 export const usersReducer = (state: IUsersState, action: IUsersAction) => {
     switch (action.type) {
