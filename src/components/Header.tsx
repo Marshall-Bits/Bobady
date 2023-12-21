@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react"
 import { UsersContext } from "../context/UsersContext";
 import { IUser } from "../interfaces/interfaces";
 import { Score } from "./Score";
+import FlipMove from "react-flip-move";
 
 const HeaderContainer = styled.div`
     position: fixed;
@@ -41,12 +42,14 @@ export const Header = () => {
 
     return (
         <HeaderContainer>
-            {usersByScore.map((user, index) => (
-                <div className="user-container" key={index}>
-                    <img src={user.avatar} />
-                    <Score score={user.score} />
-                </div>
-            ))}
+            <FlipMove typeName={null}>
+                {usersByScore.map((user, index) => (
+                    <div className="user-container" key={index}>
+                        <img src={user.avatar} />
+                        <Score score={user.score} />
+                    </div>
+                ))}
+            </FlipMove>
         </HeaderContainer>
     );
 };
