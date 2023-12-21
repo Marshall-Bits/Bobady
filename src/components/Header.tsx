@@ -21,7 +21,6 @@ const HeaderContainer = styled.div`
         box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.7);  
         border-radius: 50%;
     }
-    
  
 
     .user-container {

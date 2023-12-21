@@ -38,7 +38,9 @@ export const Avatar = ({ user }: IAvatarProps) => {
     };
 
     useEffect(() => {
-        setAvatarLoading(true);
+        if (!user.avatar){
+            setAvatarLoading(true);
+        }
     }, [user]);
 
 
@@ -52,6 +54,7 @@ export const Avatar = ({ user }: IAvatarProps) => {
                         type: 'UPDATE_USER_AVATAR_URL',
                         payload: user.id
                     })
+                    setAvatarLoading(true);
                 }}
                 src={user.avatar}
                 alt="user avatar"

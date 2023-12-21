@@ -13,6 +13,7 @@ const ListContainer = styled.div`
     max-width: 90vw;
     gap: 1em;
     font-size: 1.3em;
+    height: 50vh;
     max-height: 50vh;
     overflow-y: scroll;
     background-color: #07070733;
