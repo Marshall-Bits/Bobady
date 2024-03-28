@@ -32,7 +32,7 @@ export const UserInput = () => {
             dispatch({
                 type: 'ADD_USER',
                 payload: {
-                    name: participantName,
+                    name: participantName.trim(),
                     id: Number(new Date().getTime()),
                     score: 0,
                     avatar: `https://garticphone.com/images/avatar/${randomAvatar}.svg`,

@@ -2,7 +2,7 @@
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 187.5%;
   font-weight: 600;
-
+  overflow: hidden;
   color: rgba(218, 218, 252, 0.87);
 }
 

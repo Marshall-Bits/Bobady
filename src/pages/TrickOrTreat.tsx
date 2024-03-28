@@ -42,7 +42,7 @@ export const TrickOrTreat = () => {
             {randomUser ?
                 <>
                     <ImageAvatar src={randomUser.avatar} alt="user avatar" />
-                    <h1>{randomUser.name},</h1>
+                    <h1>¡Tu turno {randomUser.name}!</h1>
                     <button onClick={() => navigate('/question')}>Pregunta</button>
                     <p>o</p>
                     <button onClick={() => navigate('/challenge')}>Reto</button>
