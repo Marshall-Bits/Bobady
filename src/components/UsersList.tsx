@@ -19,7 +19,9 @@ const ListContainer = styled.div`
     background-color: #07070733;
     border-radius: .5rem;
     transition: all .3s ease-in-out;
-
+    scrollbar-width: none;
+    -ms-overflow-style: none; 
+    
     li{
         display: flex;
         justify-content: space-between;

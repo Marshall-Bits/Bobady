@@ -15,6 +15,8 @@ const HeaderContainer = styled.div`
     gap: .5rem;
     box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.7);  
     overflow-x: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none; 
 
     img {
         width: 1.2rem;

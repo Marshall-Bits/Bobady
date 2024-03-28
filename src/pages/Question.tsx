@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { UsersContext } from '../context/UsersContext';
 import questions from '../data/questions.json';
 import styled from 'styled-components';
+import { Count } from '../components/Count';
 
 const QuestionContainer = styled.div`
     display: flex;
@@ -28,7 +29,7 @@ export const Question = () => {
     const { users, userTurnId } = usersState;
     const user = users.find(user => user.id === userTurnId);
 
-    const [count, setCount] = useState<number>(3);
+    const [count, setCount] = useState<number>(10);
 
     
     
@@ -68,7 +69,7 @@ export const Question = () => {
     return (
         <QuestionContainer>
             <p className='question'>{formatedQuestion}</p>
-            <h2>{count}</h2>
+            <Count count={count}/>
             <button onClick={() => handleAnswer()} >
                 Sí</button>
             <br />
