@@ -13,14 +13,7 @@ const QuestionContainer = styled.div`
     margin-top: 2rem;
     text-align: center;
 
-    .question{
-        background-color: #f0f8ffc0;
-        padding: 1rem;
-        border-radius: .5rem;
-        color: #000;
-        text-align: left;
-        box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.7);  
-    }
+   
 `
 
 export const Question = () => {

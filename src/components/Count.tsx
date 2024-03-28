@@ -1,60 +1,106 @@
 import styled from "styled-components";
 
 const CountH2 = styled.h2`
-    font-size: 2rem;
-    color: #f1f1f1;
-    text-align: center;
-    animation: bigToSmall 1s ease-in-out infinite;
-    filter: 
-        drop-shadow( 1px  0px 0px black) 
-        drop-shadow(-1px  0px 0px black)
-        drop-shadow( 0px  1px 0px black) 
-        drop-shadow( 0px -1px 0px black)
-    ;
+  font-size: 2rem;
+  color: #1b531e;
+  text-align: center;
+  animation: grow 1s ease infinite;
+  filter: drop-shadow(2px 0px 0px white) drop-shadow(-2px 0px 0px white)
+    drop-shadow(0px 2px 0px white) drop-shadow(0px -2px 0px white);
 
-    @keyframes bigToSmall {
-        0% {
-            opacity: 0;
-            transform: scale(2);
-        }
-        50% {
-            opacity: 1;
-        }
-        100% {
-            opacity: 1;
-            transform: scale(1);
-        }
+  @keyframes grow {
+    0% {
+      opacity: 0;
+      transform: scale(1);
     }
-`
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+      transform: scale(2);
+    }
+  }
+`;
 
 const CountContainer = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  background: linear-gradient(
+    rgba(255, 0, 0, 1) ,
+    rgba(255, 154, 0, 1) ,
+    rgba(208, 222, 33, 1) ,
+    rgba(79, 220, 74, 1) ,
+    rgba(63, 218, 216, 1)
+  );
+  animation: rotate 2s linear infinite;
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(12deg);
+    }
+    51% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-12deg);
+    }
+  }
+`;
+
+const Wave = styled.div`
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: 5px solid #fbff00;
+  position: absolute;
+  animation: growWave 1s infinite;
+  z-index: -1;
+
+  div {
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
-    width: 4rem;
-    height: 4rem;
-    background: linear-gradient(
-        rgba(255, 0, 0, 1) 0%,
-        rgba(255, 154, 0, 1) 10%,
-        rgba(208, 222, 33, 1) 20%,
-        rgba(79, 220, 74, 1) 30%,
-        rgba(63, 218, 216, 1) 40%,
-        rgba(47, 201, 226, 1) 50%,
-        rgba(28, 127, 238, 1) 60%,
-        rgba(95, 21, 242, 1) 70%,
-        rgba(186, 12, 248, 1) 80%,
-        rgba(251, 7, 217, 1) 90%,
-        rgba(255, 0, 0, 1) 100%
-    );
-    margin: 0 auto;
+    border: 5px solid #fbff00;
+    position: absolute;
+    animation: growWave 1s infinite;
+  }
+
+  @keyframes growWave {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+`;
+
+const Container = styled.div`
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Count = ({ count }: { count: number }) => {
-
-    return (
-        <CountContainer>
-            <CountH2>{count}</CountH2>
-        </CountContainer>
-    );
-}
+  return (
+    <Container>
+      <Wave>
+        <div></div>
+      </Wave>
+      <CountContainer>
+        <CountH2>{count}</CountH2>
+      </CountContainer>
+    </Container>
+  );
+};

@@ -27,7 +27,7 @@ export const AddingPoints = () => {
         <>
             {userTurnId && pointsToAdd !== undefined &&
                 <>
-                    <h1>{user?.name} {pointsToAdd > 0 ? `+ ${pointsToAdd}` : ` ${pointsToAdd}`} puntos!</h1>
+                    <p className="question">{user?.name}, {pointsToAdd > 0 ? `Excelente! tienes ${pointsToAdd} puntos mas! 😁` : `ups! ${pointsToAdd} puntos 😓`}</p>
                     <h2>Total: {user?.score}</h2>
                     <button onClick={() => navigate("/trick-or-treat")}>Continuar</button>
                 </>

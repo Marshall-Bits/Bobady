@@ -21,7 +21,9 @@ body {
   width: 100vw;
   min-height: 100vh;
   padding: 0 .5rem;
-  background: linear-gradient(0deg, rgb(201, 29, 253) 0%, rgb(91, 6, 203) 49%);
+  background: linear-gradient(0deg, rgb(201, 29, 253) 0%, rgb(91, 6, 203) 30%);
+  background-size: 100% 100%;
+  animation: animateBackground 10s ease-in-out infinite;
 }
 
 h1 {
@@ -48,4 +50,16 @@ button {
 button:active {
   transform: translateY(3px);
   box-shadow: none;
+}
+
+@keyframes animateBackground {
+  0% {
+    background-size: 100% 100%;
+  }
+  50% {
+    background-size: 100% 110%;
+  }
+  100% {
+    background-size: 100% 100%;
+  }
 }

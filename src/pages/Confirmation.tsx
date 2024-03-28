@@ -24,11 +24,11 @@ export const Confirmation = () => {
     return (
         <>
             <h1>{randomUser.current.name}</h1>
-            <h1>¿Reto superado?</h1>
+            <p className="question">¿Crees que el reto ha sido superado?</p>
 
-            <button onClick={() => addPoints(30)}>Si</button>
+            <button onClick={() => addPoints(300)}>Si</button>
             <br />
-            <button onClick={() => addPoints(-10)}>No</button>
+            <button onClick={() => addPoints(-100)}>No</button>
         </>
     )
 };
