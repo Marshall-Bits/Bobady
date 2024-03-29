@@ -1,4 +1,4 @@
-import { useRef, useContext } from "react";
+import { useRef, useContext, useEffect } from "react";
 import { useNavigate } from "react-router";
 import challenges from "../data/challenges.json";
 import { UsersContext } from "../context/UsersContext";
@@ -42,6 +42,7 @@ const RegretButton = styled.button`
 export const Challenge = () => {
   const { usersState, dispatch } = useContext(UsersContext);
   const { users, userTurnId } = usersState;
+  const user = users.find((user) => user.id === userTurnId);
 
   const addPoints = (points: number) => {
     dispatch({
@@ -51,8 +52,13 @@ export const Challenge = () => {
     navigate("/adding-points");
   };
 
+  const usedChallengeIds = user?.challenges;
+  const availableChallengeIds = challenges
+    .filter((challenge) => !usedChallengeIds?.includes(challenge.id))
+    .map((challenge) => challenge.id);
+
   const randomChallengeId = useRef<number>(
-    Math.floor(Math.random() * challenges.length)
+    Math.floor(Math.random() * availableChallengeIds.length)
   );
 
   const filteredUsers = users.filter((user) => user.id !== userTurnId);
@@ -63,18 +69,24 @@ export const Challenge = () => {
 
   const randomUser = filteredUsers[randomUserId.current];
 
-  const formatedQuestion = challenges[
+  const formatedChallenge = challenges[
     randomChallengeId.current
   ].challenge.replace("[user]", randomUser.name);
+
+  const handleAnswer = (state: "finished" | "regret") => {
+    user?.challenges.push(challenges[randomChallengeId.current].id);
+    if (state === "finished") navigate("/confirmation");
+    else addPoints(-100);
+  };
 
   const navigate = useNavigate();
   return (
     <>
-      <p className="question">{formatedQuestion}</p>
-      <button onClick={() => navigate("/confirmation")}>Terminado</button>
-      <RegretButton onClick={() => addPoints(-100)}>
+      <p className="question">{formatedChallenge}</p>
+      <button onClick={() => handleAnswer("finished")}>Terminado</button>
+      <RegretButton onClick={() => handleAnswer("regret")}>
         <div></div>
-       <p>NOBADY!</p> 
+        <p>NOBADY!</p>
       </RegretButton>
     </>
   );

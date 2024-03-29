@@ -11,6 +11,7 @@ import { AddingPoints } from "./pages/AddingPoints";
 import { Header } from "./components/Header";
 import { ResetButton } from "./components/ResetButton";
 import { Menu } from "./components/Menu";
+import { InfoPage } from "./pages/InfoPage";
 
 function App() {
   return (
@@ -18,17 +19,17 @@ function App() {
       <UsersProvider>
         <Menu />
         <Header />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/intro" element={<Intro />} />
-            <Route path="/trick-or-treat" element={<TrickOrTreat />} />
-            <Route path="/question" element={<Question />} />
-            <Route path="/challenge" element={<Challenge />} />
-            <Route path="/confirmation" element={<Confirmation />} />
-            <Route path="/adding-points" element={<AddingPoints />} />
-          </Routes>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/intro" element={<Intro />} />
+          <Route path="/trick-or-treat" element={<TrickOrTreat />} />
+          <Route path="/question" element={<Question />} />
+          <Route path="/challenge" element={<Challenge />} />
+          <Route path="/confirmation" element={<Confirmation />} />
+          <Route path="/adding-points" element={<AddingPoints />} />
+          <Route path="/info" element={<InfoPage />} />
+        </Routes>
         <ResetButton />
-        <p className="logo">Bobady</p>
       </UsersProvider>
     </div>
   );

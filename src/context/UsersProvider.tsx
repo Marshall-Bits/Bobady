@@ -15,7 +15,7 @@ const INITIAL_STATE: IUsersState = {
             score: 0,
             avatar: 'https://garticphone.com/images/avatar/1.svg',
             turns: 0,
-            callenges: [],
+            challenges: [],
             questions: [],
         },
         {
@@ -24,7 +24,7 @@ const INITIAL_STATE: IUsersState = {
             score: 0,
             avatar: 'https://garticphone.com/images/avatar/2.svg',
             turns: 0,
-            callenges: [],
+            challenges: [],
             questions: [],
         },
         {
@@ -33,7 +33,7 @@ const INITIAL_STATE: IUsersState = {
             score: 0,
             avatar: 'https://garticphone.com/images/avatar/3.svg',
             turns: 0,
-            callenges: [],
+            challenges: [],
             questions: [],
         },
     ],
