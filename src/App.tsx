@@ -10,11 +10,13 @@ import { Confirmation } from "./pages/Confirmation";
 import { AddingPoints } from "./pages/AddingPoints";
 import { Header } from "./components/Header";
 import { ResetButton } from "./components/ResetButton";
+import { Menu } from "./components/Menu";
 
 function App() {
   return (
     <div className="App">
       <UsersProvider>
+        <Menu />
         <Header />
           <Routes>
             <Route path="/" element={<Home />} />
