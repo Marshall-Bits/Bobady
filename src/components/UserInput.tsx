@@ -12,7 +12,7 @@ const UserInputContainer = styled.form`
     gap: 20px;
 
     input {
-        width: 80%;
+        width: 100%;
         font-size: 30px;
         padding: 10px;
         border: 1px solid #ccc;

@@ -10,23 +10,23 @@ import { Confirmation } from "./pages/Confirmation";
 import { AddingPoints } from "./pages/AddingPoints";
 import { Header } from "./components/Header";
 import { ResetButton } from "./components/ResetButton";
-import { ModalInfo } from "./components/ModalInfo";
 
 function App() {
   return (
     <div className="App">
       <UsersProvider>
         <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/intro" element={<Intro />} />
-          <Route path="/trick-or-treat" element={<TrickOrTreat />} />
-          <Route path="/question" element={<Question />} />
-          <Route path="/challenge" element={<Challenge />} />
-          <Route path="/confirmation" element={<Confirmation />} />
-          <Route path="/adding-points" element={<AddingPoints />} />
-        </Routes>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/intro" element={<Intro />} />
+            <Route path="/trick-or-treat" element={<TrickOrTreat />} />
+            <Route path="/question" element={<Question />} />
+            <Route path="/challenge" element={<Challenge />} />
+            <Route path="/confirmation" element={<Confirmation />} />
+            <Route path="/adding-points" element={<AddingPoints />} />
+          </Routes>
         <ResetButton />
+        <p className="logo">Bobady</p>
       </UsersProvider>
     </div>
   );

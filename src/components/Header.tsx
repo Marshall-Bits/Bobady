@@ -42,12 +42,19 @@ export const Header = () => {
 
   return (
     <HeaderContainer>
-      {usersByScore.map((user, index) => (
-        <div className="user-container" key={index}>
-          <img src={user.avatar} />
-          <Score score={user.score} />
+      {usersByScore.length > 0 ? (
+        usersByScore.map((user, index) => (
+          <div className="user-container" key={index}>
+            <img src={user.avatar} />
+            <Score score={user.score} />
+          </div>
+        ))
+      ) : (
+        <div className="user-container" >
+          <img src="https://garticphone.com/images/avt_empty.png" />
+          <Score score={0} />
         </div>
-      ))}
+      )}
     </HeaderContainer>
   );
 };

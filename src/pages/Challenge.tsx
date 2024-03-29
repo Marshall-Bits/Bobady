@@ -6,14 +6,37 @@ import styled from "styled-components";
 
 const RegretButton = styled.button`
   background-color: red;
-  border: 5px solid white;
-  color: white;
-  width: 6rem;
-  height: 6rem;
-  margin-top: 3rem;
   border-radius: 50%;
+  border: 5px solid rgba(0, 0, 0, 0.459);
+  color: white;
   cursor: pointer;
-  box-shadow: 0 1px 5px 10px rgba(0, 0, 0, 0.459);
+  height: 6rem;
+  margin-top: 2rem;
+  min-width: 6rem;
+  width: 6rem;
+  position: relative;
+
+  div {
+    border-right: 5px solid rgba(255, 255, 255, 0.459);
+    border-top: 3px solid rgba(255, 255, 255, 0.459);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.459);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    border-radius: 50%;
+    height: 5rem;
+    width: 5rem;
+  }
+
+  p {
+    position: absolute;
+    font-family: "Happy";
+    font-weight: 100;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+  }
 `;
 
 export const Challenge = () => {
@@ -49,7 +72,10 @@ export const Challenge = () => {
     <>
       <p className="question">{formatedQuestion}</p>
       <button onClick={() => navigate("/confirmation")}>Terminado</button>
-      <RegretButton onClick={() => addPoints(-100)}>INSTANT REGRET!</RegretButton>
+      <RegretButton onClick={() => addPoints(-100)}>
+        <div></div>
+       <p>NOBADY!</p> 
+      </RegretButton>
     </>
   );
 };

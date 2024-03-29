@@ -46,7 +46,6 @@ export const TrickOrTreat = () => {
                     <button onClick={() => navigate('/question')}>Pregunta</button>
                     <p>o</p>
                     <button onClick={() => navigate('/challenge')}>Reto</button>
-                    <button onClick={() => navigate('/intro')}>Back</button>
                 </>
                 : <h1>Loading...</h1>
             }
