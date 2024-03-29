@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { UsersContext } from "../context/UsersContext";
 import { useNavigate } from "react-router";
-import { ConfirmExit } from "./ConfirmExit";
+import { ModalExit } from "./ModalExit";
 import styled from "styled-components";
 
 const ExitButton = styled.img`
@@ -33,7 +33,7 @@ export const ResetButton = () => {
   return (
     <>
       {showConfirm && (
-        <ConfirmExit acceptFunction={resetGame} rejectFunction={hideConfirm} />
+        <ModalExit acceptFunction={resetGame} rejectFunction={hideConfirm} />
       )}
       <ExitButton onClick={() => setShowConfirm(true)} src="./icons-exit.svg" alt="exit button" />
     </>

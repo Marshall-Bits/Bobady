@@ -10,7 +10,7 @@ import { Confirmation } from "./pages/Confirmation";
 import { AddingPoints } from "./pages/AddingPoints";
 import { Header } from "./components/Header";
 import { ResetButton } from "./components/ResetButton";
-import { ConfirmExit } from "./components/ConfirmExit";
+import { ModalInfo } from "./components/ModalInfo";
 
 function App() {
   return (

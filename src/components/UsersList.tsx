@@ -50,26 +50,30 @@ export const UsersList = () => {
 
   return (
     <ListContainer>
-      {users
-        .slice()
-        .reverse()
-        .map((user, index) => (
-          <li key={index}>
-            <Avatar user={user} />
-            <p>{user.name}</p>
-            <img
-              className="delete"
-              src="./icons-trash.svg"
-              alt="delete user"
-              onClick={() => {
-                dispatch({
-                  type: "REMOVE_USER",
-                  payload: user.id,
-                });
-              }}
-            />
-          </li>
-        ))}
+      {users.length > 0 ? (
+        users
+          .slice()
+          .reverse()
+          .map((user, index) => (
+            <li key={index}>
+              <Avatar user={user} />
+              <p>{user.name}</p>
+              <img
+                className="delete"
+                src="./icons-trash.svg"
+                alt="delete user"
+                onClick={() => {
+                  dispatch({
+                    type: "REMOVE_USER",
+                    payload: user.id,
+                  });
+                }}
+              />
+            </li>
+          ))
+      ) : (
+        <p>Añade participantes</p>
+      )}
     </ListContainer>
   );
 };
