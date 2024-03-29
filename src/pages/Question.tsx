@@ -35,9 +35,11 @@ export const Question = () => {
   const filteredUsers = users.filter(
     (user) => user.id !== usersState.userTurnId
   );
+
   const randomUserId = useRef<number>(
     Math.floor(Math.random() * filteredUsers.length)
   );
+
   const randomUser = filteredUsers[randomUserId.current];
 
   const formatedQuestion = questions[randomQuestionId.current].question.replace(

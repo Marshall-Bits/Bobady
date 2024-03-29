@@ -4,7 +4,7 @@ export interface IUser {
     score: number;
     avatar: string;
     turns: number;
-    callenges: number[];
+    challenges: number[];
     questions: number[];
 }
 

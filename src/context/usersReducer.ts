@@ -76,6 +76,7 @@ export const usersReducer = (state: IUsersState, action: IUsersAction) => {
             score: 0,
             turns: 0,
             questions: [],
+            challenges: [],
           };
         }),
         userTurnId: 0,
