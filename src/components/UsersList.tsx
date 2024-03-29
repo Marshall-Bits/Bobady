@@ -42,6 +42,10 @@ const ListContainer = styled.div`
     background-color: rgb(255, 255, 115);
     border-radius: 50%;
   }
+
+  p {
+    font-size: 1rem;
+  }
 `;
 
 export const UsersList = () => {
@@ -72,7 +76,7 @@ export const UsersList = () => {
             </li>
           ))
       ) : (
-        <p>Añade participantes</p>
+        <p>Añade participantes...</p>
       )}
     </ListContainer>
   );

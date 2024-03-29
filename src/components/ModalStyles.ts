@@ -40,6 +40,7 @@ export const Overlay = styled.div`
 export const Modal = styled.div`
   background-color: rgb(201, 29, 253);
   width: 90%;
+  max-width: 15rem;
   padding: 1rem;
   border-radius: 0.5rem;
   display: flex;

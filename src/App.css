@@ -6,6 +6,7 @@
     min-height: 80vh;
     margin: 10vh 0;
     gap: .6rem;
+    max-width: 15rem;
 }
 
 .question{

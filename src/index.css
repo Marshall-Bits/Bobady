@@ -35,7 +35,7 @@ button {
   border-radius: .5rem;
   border: 1px solid transparent;
   padding: .5rem;
-  min-width: 6rem;
+  min-width: 100%;
   font-size: .8rem;
   font-weight: 500;
   font-family: inherit;
