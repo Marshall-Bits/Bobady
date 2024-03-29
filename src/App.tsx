@@ -12,13 +12,16 @@ import { Header } from "./components/Header";
 import { ResetButton } from "./components/ResetButton";
 import { Menu } from "./components/Menu";
 import { InfoPage } from "./pages/InfoPage";
+import { useState } from "react";
 
 function App() {
+  const [showMenu, setShowMenu] = useState(false);
+
   return (
     <div className="App">
       <UsersProvider>
-        <Menu />
-        <Header />
+        {showMenu ? <Menu setShowMenu={setShowMenu} /> : <></>}
+        <Header setShowMenu={setShowMenu} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/intro" element={<Intro />} />

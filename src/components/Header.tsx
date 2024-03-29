@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useContext, useEffect, useState } from "react";
+import { FunctionComponent, useContext, useEffect, useState } from "react";
 import { UsersContext } from "../context/UsersContext";
 import { IUser } from "../interfaces/interfaces";
 import { Score } from "./Score";
@@ -28,9 +28,22 @@ const HeaderContainer = styled.div`
   .user-container {
     position: relative;
   }
+
+  #menu-btn {
+    cursor: pointer;
+    box-shadow: none;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 `;
 
-export const Header = () => {
+type HeaderProps = {
+  setShowMenu: (showMenu: boolean) => void;
+};
+
+export const Header: FunctionComponent<HeaderProps> = ({ setShowMenu }) => {
   const { usersState } = useContext(UsersContext);
   const { users } = usersState;
   const [usersByScore, setUsersByScore] = useState<IUser[]>(users);
@@ -50,11 +63,17 @@ export const Header = () => {
           </div>
         ))
       ) : (
-        <div className="user-container" >
+        <div className="user-container">
           <img src="https://garticphone.com/images/avt_empty.png" />
           <Score score={0} />
         </div>
       )}
+      <img
+        onClick={() => setShowMenu(true)}
+        id="menu-btn"
+        src="./icons-menu.svg"
+        alt="menu icon"
+      />
     </HeaderContainer>
   );
 };
