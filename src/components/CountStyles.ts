@@ -58,19 +58,22 @@ export const CountContainer = styled.div`
 export const Wave = styled.div`
   width: 5rem;
   height: 5rem;
+  
   border-radius: 50%;
   border: 5px solid #fbff00;
   position: absolute;
-  animation: growWave 1s infinite;
+  animation: growWave 1s infinite; 
   z-index: -1;
   
   div {
-    width: 100%;
-    height: 100%;
+    width: 140%;
+    height: 140%;
     border-radius: 50%;
     border: 5px solid #fbff00;
     position: absolute;
-    animation: growWave 1s infinite;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   
   @keyframes growWave {
@@ -88,6 +91,7 @@ export const Wave = styled.div`
 export const Container = styled.div`
   width: 100%;
   height: 100%;
+  overflow: hidden;
   margin: 0 auto;
   display: flex;
   justify-content: center;

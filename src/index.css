@@ -72,12 +72,12 @@ a {
 
 @keyframes animateBackground {
   0% {
-    background-size: 150% 150%;
+    background-size: 110% 110%;
   }
   50% {
-    background-size: 150% 170%;
+    background-size: 110% 140%;
   }
   100% {
-    background-size: 150% 150%;
+    background-size: 110% 110%;
   }
 }
