@@ -2,13 +2,16 @@ import styled from "styled-components";
 import { Logo } from "../components/Logo";
 import { Link } from "react-router-dom";
 
-const InfoPageContainer = styled.div`
+const InstructionsPageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: 0.6rem;
   gap: 0.3rem;
   text-align: left;
+  height: 100%;
+  padding-top: 10vh;
+  overflow-y: scroll !important;
 
   h1,
   h3 {
@@ -23,11 +26,11 @@ const InfoPageContainer = styled.div`
   }
 `;
 
-export const InfoPage = () => {
+export const InstructionsPage = () => {
   return (
-    <InfoPageContainer>
+    <InstructionsPageContainer>
       <Logo />
-      <h1>Info</h1>
+      <h1>Instrucciones</h1>
       <p>
         Bobady es un juego de preguntas y retos para jugar con un mínimo de 3
         personas.
@@ -57,6 +60,6 @@ export const InfoPage = () => {
       <Link to="/">
         <button>Comenzar!</button>
       </Link>
-    </InfoPageContainer>
+    </InstructionsPageContainer>
   );
 };

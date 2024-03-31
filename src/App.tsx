@@ -11,7 +11,7 @@ import { AddingPoints } from "./pages/AddingPoints";
 import { Header } from "./components/Header";
 import { ResetButton } from "./components/ResetButton";
 import { Menu } from "./components/Menu";
-import { InfoPage } from "./pages/InfoPage";
+import { InstructionsPage } from "./pages/InstructionsPage";
 import { useState } from "react";
 
 function App() {
@@ -30,7 +30,7 @@ function App() {
           <Route path="/challenge" element={<Challenge />} />
           <Route path="/confirmation" element={<Confirmation />} />
           <Route path="/adding-points" element={<AddingPoints />} />
-          <Route path="/info" element={<InfoPage />} />
+          <Route path="/info" element={<InstructionsPage />} />
         </Routes>
         <ResetButton />
       </UsersProvider>

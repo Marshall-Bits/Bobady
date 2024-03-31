@@ -6,8 +6,8 @@ export const CountH2 = styled.h2`
   text-align: center;
   animation: grow 1s ease infinite;
   filter: drop-shadow(2px 0px 0px white) drop-shadow(-2px 0px 0px white)
-    drop-shadow(0px 2px 0px white) drop-shadow(0px -2px 0px white);
-
+  drop-shadow(0px 2px 0px white) drop-shadow(0px -2px 0px white);
+  
   @keyframes grow {
     0% {
       opacity: 0;
@@ -21,7 +21,7 @@ export const CountH2 = styled.h2`
       transform: scale(2);
     }
   }
-`;
+  `;
 
 export const CountContainer = styled.div`
   display: flex;
@@ -36,7 +36,7 @@ export const CountContainer = styled.div`
     rgba(208, 222, 33, 1),
     rgba(79, 220, 74, 1),
     rgba(63, 218, 216, 1)
-  );
+    );
   animation: rotate 2s linear infinite;
 
   @keyframes rotate {
@@ -53,7 +53,7 @@ export const CountContainer = styled.div`
       transform: rotate(-12deg);
     }
   }
-`;
+  `;
 
 export const Wave = styled.div`
   width: 5rem;
@@ -63,7 +63,7 @@ export const Wave = styled.div`
   position: absolute;
   animation: growWave 1s infinite;
   z-index: -1;
-
+  
   div {
     width: 100%;
     height: 100%;
@@ -72,7 +72,7 @@ export const Wave = styled.div`
     position: absolute;
     animation: growWave 1s infinite;
   }
-
+  
   @keyframes growWave {
     0% {
       transform: scale(1);
@@ -83,11 +83,13 @@ export const Wave = styled.div`
       opacity: 0;
     }
   }
-`;
+  `;
 
 export const Container = styled.div`
+  width: 100%;
+  height: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
-`;
+  `;

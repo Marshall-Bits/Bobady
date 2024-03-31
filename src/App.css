@@ -4,26 +4,26 @@
 }
 
 .App {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 80vh;
-  margin: 10vh 0;
   gap: 0.6rem;
+  justify-content: center;
+  margin: 10vh 0;
   max-width: 15rem;
+  min-height: 80vh;
 }
 
 .question {
   background-color: #f0f8ffc0;
-  padding: 1rem;
   border-radius: 0.5rem;
-  width: 90vw;
-  max-width: 10rem;
-  font-size: 0.7em;
-  color: #000;
-  text-align: left;
   box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.7);
+  color: #000;
+  font-size: 0.7em;
+  max-width: 10rem;
+  padding: 1rem;
+  text-align: left;
+  width: 90vw;
 }
 
 .logo{

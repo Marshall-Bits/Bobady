@@ -26,7 +26,7 @@ export const ModalInfo = ({
       <Modal>
         <h2>{title}</h2>
         <p>{message}</p>
-        <button onClick={handleHide}>Entendido</button>
+        <button onClick={handleHide}>Vale</button>
       </Modal>
     </Overlay>
   );
