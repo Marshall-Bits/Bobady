@@ -9,7 +9,7 @@ interface UsersProviderProps {
 
 const INITIAL_STATE: IUsersState = {
     users: [
-        {
+       /*  {
             id: 1,
             name: 'Juan',
             score: 0,
@@ -35,7 +35,7 @@ const INITIAL_STATE: IUsersState = {
             turns: 0,
             challenges: [],
             questions: [],
-        },
+        }, */
     ],
 };
 
