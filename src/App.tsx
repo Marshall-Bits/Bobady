@@ -13,6 +13,7 @@ import { ResetButton } from "./components/ResetButton";
 import { Menu } from "./components/Menu";
 import { InstructionsPage } from "./pages/InstructionsPage";
 import { useState } from "react";
+import { Winner } from "./pages/Winner";
 
 function App() {
   const [showMenu, setShowMenu] = useState(false);
@@ -31,6 +32,7 @@ function App() {
           <Route path="/confirmation" element={<Confirmation />} />
           <Route path="/adding-points" element={<AddingPoints />} />
           <Route path="/info" element={<InstructionsPage />} />
+          <Route path="/winner" element={<Winner />} />
         </Routes>
         <ResetButton />
       </UsersProvider>
