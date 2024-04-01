@@ -2,6 +2,9 @@ import { useContext, useEffect, useRef } from "react";
 import { useNavigate } from "react-router";
 import { UsersContext } from "../context/UsersContext";
 import { Logo } from "../components/Logo";
+import JSConfetti from "js-confetti";
+
+const jsConfetti = new JSConfetti();
 
 export const AddingPoints = () => {
   const { usersState, dispatch } = useContext(UsersContext);
@@ -9,7 +12,11 @@ export const AddingPoints = () => {
   const { pointsToAdd, userTurnId, users } = usersState;
   const user = users.find((user) => user.id === userTurnId);
   const navigate = useNavigate();
-
+  useEffect(() => {
+    if (pointsToAdd && pointsToAdd > 100) {
+      jsConfetti.addConfetti();
+    }
+  }, [pointsToAdd]);
   useEffect(() => {
     if (pointsSet.current === false) {
       dispatch({
@@ -20,6 +27,9 @@ export const AddingPoints = () => {
         pointsSet.current = true;
       };
     }
+    return () => {
+      jsConfetti.clearCanvas();
+    };
   }, []);
 
   return (
