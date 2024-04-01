@@ -36,7 +36,7 @@ export const InstructionsPage = () => {
         personas.
       </p>
       <p>
-        El juego elijirá a alguien al azar y te preguntará si quieres un reto o
+        El juego elegirá a alguien al azar y te preguntará si quieres un reto o
         una pregunta.
       </p>
       <h3>Preguntas</h3>

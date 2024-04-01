@@ -8,6 +8,10 @@ const ImageAvatar = styled.img`
     width: 5rem;
 `;
 
+const Title = styled.h1`
+  text-align: center;
+`;
+
 export const TrickOrTreat = () => {
     const [randomUser, setRandomUser] = useState<IUser>();
     const { usersState, dispatch } = useContext(UsersContext);
@@ -53,7 +57,7 @@ export const TrickOrTreat = () => {
             {randomUser ?
                 <>
                     <ImageAvatar src={randomUser.avatar} alt="user avatar" />
-                    <h1>¡Tu turno {randomUser.name}!</h1>
+                    <Title>¡Tu turno {randomUser.name}!</Title>
                     <button onClick={() => navigate('/question')}>Pregunta</button>
                     <p>o</p>
                     <button onClick={() => navigate('/challenge')}>Reto</button>

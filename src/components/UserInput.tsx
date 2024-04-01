@@ -37,7 +37,7 @@ export const UserInput = () => {
                     score: 0,
                     avatar: `https://garticphone.com/images/avatar/${randomAvatar}.svg`,
                     turns: 0,
-                    callenges: [],
+                    challenges: [],
                     questions: [],
                 },
             });
