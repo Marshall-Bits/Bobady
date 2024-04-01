@@ -14,6 +14,17 @@ export const TrickOrTreat = () => {
     const navigate = useNavigate();
     const { users } = usersState;
 
+    const checkForWinner = () => {
+        const allUsersReachedMaxTurns = users.every(user => user.turns >= 10);
+        if (allUsersReachedMaxTurns) {
+            navigate('/winner');
+        }
+    };
+
+    useEffect(() => {
+        checkForWinner();
+    }, [users]);
+
     useEffect(() => {
         // exclude users with higher turns
         const usersWithLessTurns = users.filter(user => user.turns === Math.min(...users.map(user => user.turns)));
