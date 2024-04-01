@@ -17,6 +17,7 @@ const MenuContainer = styled.div`
   right: 0;
   top: 0;
   width: 50%;
+  max-width: 300px;
   z-index: 1;
 
   &.hide {

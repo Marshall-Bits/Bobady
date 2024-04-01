@@ -86,7 +86,7 @@ export const Challenge = () => {
       <button onClick={() => handleAnswer("finished")}>Terminado</button>
       <RegretButton onClick={() => handleAnswer("regret")}>
         <div></div>
-        <p>NOBADY!</p>
+        <p>¡NOBADY!</p>
       </RegretButton>
     </>
   );

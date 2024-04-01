@@ -19,9 +19,9 @@ body {
   place-items: center;
   width: 100vw;
   height: 100vh;
-  overflow-x: hidden;
+  overflow: hidden;
   padding: 0 0.5rem;
-  background: linear-gradient(0deg, rgb(201, 29, 253) 0%, rgb(91, 6, 203) 30%);
+  background: linear-gradient(0deg, rgb(201, 29, 253) 10%, rgb(91, 6, 203) 40%);
   background-size: 100% 100%;
   animation: animateBackground 10s ease-in-out infinite;
 }
@@ -72,12 +72,12 @@ a {
 
 @keyframes animateBackground {
   0% {
-    background-size: 110% 110%;
+    background-size: 120% 120%;
   }
   50% {
-    background-size: 110% 140%;
+    background-size: 120% 140%;
   }
   100% {
-    background-size: 110% 110%;
+    background-size: 120% 120%;
   }
 }

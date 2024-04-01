@@ -9,10 +9,10 @@ const InstructionsPageContainer = styled.div`
   font-size: 0.6rem;
   gap: 0.3rem;
   text-align: left;
-  height: 100%;
-  padding-top: 10vh;
-  overflow-y: scroll !important;
-
+  height: 100vh;
+  padding: calc(70px + 2rem) 0;
+  overflow-y: scroll;
+  scrollbar-width: none;
   h1,
   h3 {
     font-size: 1.5rem;
@@ -44,21 +44,28 @@ export const InstructionsPage = () => {
         Si eliges pregunta, tendrás 10 segundos para responder Sí o No. ¡Ojito!
         cuanto más rápido respondas, más puntos ganarás.
       </p>
+      <p>
+        Debes leer la pregunta en voz alta para que todo el mundo la escuche.
+      </p>
       <h3>Retos</h3>
       <p>
-        Un reto da más puntos, tendrás que completarlo pero... Otra persona
-        elegida al azar juzgará si el reto ha sido superado o no.
+        ¡Un reto da 300 puntos! pero... Otra persona elegida al azar juzgará si
+        el reto ha sido superado o no. 😏
       </p>
       <p>
         Si no quieres hacer el reto debes decir el alto: ¡NOBADY! y pulsar el
         botón rojo. ¡Pero cuidado! pulsando el botón pierdes puntos.
       </p>
       <p>
-        Si un reto implica a otra persona, ella también podrá gritar NOBADY y
+        Si un reto implica a otra persona, ella también podrá decir: ¡NOBADY! y
         pulsar el botón rojo.
       </p>
+      <p>
+        Si el reto es superado, el juez deberá decir: ¡BOBADY! y lo celebraremos
+        con efusividad. 🎉
+      </p>
       <Link to="/">
-        <button>Comenzar!</button>
+        <button>Vale</button>
       </Link>
     </InstructionsPageContainer>
   );

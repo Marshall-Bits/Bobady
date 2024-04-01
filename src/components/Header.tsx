@@ -9,7 +9,7 @@ const HeaderContainer = styled.div`
   top: 0;
   background-color: rgba(201, 29, 253, 0.322);
   width: 100vw;
-  height: 10vh;
+  height: 70px;
   padding: 0.4rem;
   padding-left: 1rem;
   display: flex;

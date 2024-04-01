@@ -2,6 +2,7 @@ import { useContext, useRef } from "react";
 import { useNavigate } from "react-router";
 import { UsersContext } from "../context/UsersContext";
 import { IUser } from "../interfaces/interfaces";
+import { Logo } from "../components/Logo";
 
 export const Confirmation = () => {
   const { usersState, dispatch } = useContext(UsersContext);
@@ -27,9 +28,9 @@ export const Confirmation = () => {
   return (
     <>
       <h1>{randomUser.current.name}</h1>
-      <p className="question">¿Crees que el reto ha sido superado?</p>
-      <button onClick={() => addPoints(300)}>Si</button>
-      <button onClick={() => addPoints(-100)}>No</button>
+      <p className="question">¿Reto superado?</p>
+      <button onClick={() => addPoints(300)}>Bobady</button>
+      <button onClick={() => addPoints(-100)}>Epic fail</button>
     </>
   );
 };

@@ -1,6 +1,7 @@
 import { useContext, useEffect, useRef } from "react";
 import { useNavigate } from "react-router";
 import { UsersContext } from "../context/UsersContext";
+import { Logo } from "../components/Logo";
 
 export const AddingPoints = () => {
   const { usersState, dispatch } = useContext(UsersContext);
@@ -25,10 +26,11 @@ export const AddingPoints = () => {
     <>
       {userTurnId && pointsToAdd !== undefined && (
         <>
+          {pointsToAdd > 0 && <Logo />}
           <p className="question">
             {pointsToAdd > 0
-              ? `Excelente ${user?.name}! tienes ${pointsToAdd} puntos mas! 😁`
-              : `Sorry ${user?.name}! ${pointsToAdd} puntos 😓`}
+              ? `¡Bobady ${user?.name}! tienes ${pointsToAdd} puntos mas 😁`
+              : `Sorry ${user?.name}, ${pointsToAdd} puntos 😓`}
           </p>
           <h2>Total: {user?.score}</h2>
           <button onClick={() => navigate("/trick-or-treat")}>Continuar</button>
