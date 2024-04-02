@@ -4,6 +4,10 @@ import { UsersContext } from "../context/UsersContext";
 import questions from "../data/questions.json";
 import styled from "styled-components";
 import { Count } from "../components/Count";
+import yesSound from "../assets/sounds/yeah.mp3";
+import noSound from "../assets/sounds/no.mp3";
+import time from "../assets/sounds/time.mp3";
+import crowdAw from "../assets/sounds/crowd-aw.mp3";
 
 const QuestionContainer = styled.div`
   display: flex;
@@ -55,7 +59,8 @@ export const Question = () => {
       });
     }
 
-    if (count === 0) handleAnswer();
+    if (count === 0) handleAnswer("timeup");
+    else new Audio(time).play();
 
     const interval = setInterval(() => {
       setCount(count - 1);
@@ -64,8 +69,21 @@ export const Question = () => {
     return () => clearInterval(interval);
   }, [count]);
 
-  const handleAnswer = () => {
+  const handleAnswer = (answer: "yes" | "no" | "timeup") => {
     user?.questions.push(questions[randomQuestionId.current].id);
+
+    if (answer === "yes") {
+      new Audio(yesSound).play();
+      dispatch({
+        type: "ADD_POINTS",
+        payload: count * 10,
+      });
+    } else if (answer === "no") {
+      new Audio(noSound).play();
+    } else if (answer === "timeup") {
+      new Audio(crowdAw).play();
+    }
+
     navigate("/adding-points");
   };
 
@@ -73,8 +91,8 @@ export const Question = () => {
     <QuestionContainer>
       <p className="question">{formatedQuestion}</p>
       <Count count={count} />
-      <button onClick={() => handleAnswer()}>Sí</button>
-      <button onClick={() => handleAnswer()}>No</button>
+      <button onClick={() => handleAnswer("yes")}>Sí</button>
+      <button onClick={() => handleAnswer("no")}>No</button>
     </QuestionContainer>
   );
 };

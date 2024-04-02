@@ -3,6 +3,8 @@ import { useNavigate } from "react-router";
 import challenges from "../data/challenges.json";
 import { UsersContext } from "../context/UsersContext";
 import styled from "styled-components";
+import nobady from "../assets/sounds/nobady.mp3";
+import challengeAccepted from "../assets/sounds/challenge-accepted.mp3";
 
 const RegretButton = styled.button`
   background-color: red;
@@ -44,6 +46,10 @@ export const Challenge = () => {
   const { users, userTurnId } = usersState;
   const user = users.find((user) => user.id === userTurnId);
 
+  useEffect(() => {
+    new Audio(challengeAccepted).play();
+  }, []);
+
   const addPoints = (points: number) => {
     dispatch({
       type: "UPDATE_POINTS_TO_ADD",
@@ -75,8 +81,12 @@ export const Challenge = () => {
 
   const handleAnswer = (state: "finished" | "regret") => {
     user?.challenges.push(challenges[randomChallengeId.current].id);
-    if (state === "finished") navigate("/confirmation");
-    else addPoints(-100);
+    if (state === "finished") {
+      navigate("/confirmation");
+    } else {
+      new Audio(nobady).play();
+      addPoints(-100);
+    }
   };
 
   const navigate = useNavigate();

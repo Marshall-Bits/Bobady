@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Logo } from "../components/Logo";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const InstructionsPageContainer = styled.div`
   display: flex;
@@ -27,6 +27,13 @@ const InstructionsPageContainer = styled.div`
 `;
 
 export const InstructionsPage = () => {
+  const navigate = useNavigate();
+
+
+  const handleGoBack = () => {
+    navigate(-1);
+  };
+
   return (
     <InstructionsPageContainer>
       <Logo />
@@ -64,9 +71,8 @@ export const InstructionsPage = () => {
         Si el reto es superado, el juez deberá decir: ¡BOBADY! y lo celebraremos
         con efusividad. 🎉
       </p>
-      <Link to="/">
-        <button>Vale</button>
-      </Link>
+
+      <button onClick={handleGoBack}>Vale</button>
     </InstructionsPageContainer>
   );
 };

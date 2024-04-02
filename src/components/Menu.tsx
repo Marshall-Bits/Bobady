@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { FunctionComponent } from "react";
 import { useState } from "react";
+import { ResetButton } from "./ResetButton";
 
 const MenuContainer = styled.div`
   align-items: center;
@@ -20,6 +20,24 @@ const MenuContainer = styled.div`
   max-width: 300px;
   z-index: 1;
 
+  li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 100%;
+  }
+
+  a {
+    display: flex;
+    width: 100%;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+  }
+
   &.hide {
     animation: slideOut 0.5s forwards;
   }
@@ -30,6 +48,11 @@ const MenuContainer = styled.div`
     justify-content: flex-end;
     padding: 1rem;
     cursor: pointer;
+  }
+
+  span img {
+    width: 20px;
+    height: 20px;
   }
 
   @keyframes slideIn {
@@ -86,9 +109,10 @@ const Overlay = styled.div`
 
 type MenuProps = {
   setShowMenu: (showMenu: boolean) => void;
+  setShowConfirm: (showConfirm: boolean) => void;
 };
 
-export const Menu: FunctionComponent<MenuProps> = ({ setShowMenu }) => {
+export const Menu = ({ setShowMenu, setShowConfirm }: MenuProps) => {
   const [hide, setHide] = useState(false);
 
   const handleClose = () => {
@@ -105,15 +129,22 @@ export const Menu: FunctionComponent<MenuProps> = ({ setShowMenu }) => {
         <ul>
           <li>
             <Link onClick={handleClose} to={"/info"}>
+              <span>
+                <img src="./icons-arrow.svg" alt="arrow" />
+              </span>
               Instrucciones
             </Link>
           </li>
           <li>
             <Link onClick={handleClose} to={"/info"}>
+              <span>
+                <img src="./icons-arrow.svg" alt="arrow" />
+              </span>
               Instrucciones
             </Link>
           </li>
         </ul>
+        <ResetButton setShowConfirm={setShowConfirm} />
       </MenuContainer>
     </Overlay>
   );

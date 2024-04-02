@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Count } from "../components/Count";
 import styled from "styled-components";
+import time from "../assets/sounds/time.mp3";
 
 const IntroContainer = styled.div`
   width: 100%;
@@ -15,6 +16,7 @@ export const Intro = () => {
 
   useEffect(() => {
     if (count === 0) navigate("/trick-or-treat");
+    else new Audio(time).play();
     const interval = setInterval(() => {
       setCount(count - 1);
     }, 1000);

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { FunctionComponent, useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { UsersContext } from "../context/UsersContext";
 import { IUser } from "../interfaces/interfaces";
 import { Score } from "./Score";
@@ -43,7 +43,7 @@ type HeaderProps = {
   setShowMenu: (showMenu: boolean) => void;
 };
 
-export const Header: FunctionComponent<HeaderProps> = ({ setShowMenu }) => {
+export const Header = ({ setShowMenu }: HeaderProps) => {
   const { usersState } = useContext(UsersContext);
   const { users } = usersState;
   const [usersByScore, setUsersByScore] = useState<IUser[]>(users);
