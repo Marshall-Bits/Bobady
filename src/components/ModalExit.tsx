@@ -1,16 +1,12 @@
 import { Modal, Overlay } from "./ModalStyles";
-import { FunctionComponent, useState } from "react";
+import { useState } from "react";
+import { IModalExitProps } from "../interfaces/interfaces";
 
-type ModalExitProps = {
-  rejectFunction: () => void;
-  acceptFunction: () => void;
-};
-
-export const ModalExit: FunctionComponent<ModalExitProps> = ({
+export const ModalExit = ({
   rejectFunction,
   acceptFunction,
-}) => {
-  const [hide, setHide] = useState(false);
+}: IModalExitProps) => {
+  const [hide, setHide] = useState<boolean>(false);
 
   const handleReject = () => {
     setHide(true);

@@ -1,15 +1,16 @@
 import { IUsersState } from "../interfaces/interfaces";
-import { UsersContext } from "./UsersContext"
-import { useReducer } from "react";
+import { UsersContext } from "./UsersContext";
+import { useEffect, useReducer } from "react";
 import { usersReducer } from "./usersReducer";
 
 interface UsersProviderProps {
-    children: JSX.Element | JSX.Element[]
+  children: JSX.Element | JSX.Element[];
 }
 
 const INITIAL_STATE: IUsersState = {
-    users: [
-       /*  {
+  users: [
+    // Uncomment this block to have some initial users
+    /*  {
             id: 1,
             name: 'Juan',
             score: 0,
@@ -36,14 +37,28 @@ const INITIAL_STATE: IUsersState = {
             challenges: [],
             questions: [],
         }, */
-    ],
+  ],
+};
+
+const getInitialState = () => {
+  const savedState = localStorage.getItem("usersState");
+  return savedState ? JSON.parse(savedState) : INITIAL_STATE;
 };
 
 export const UsersProvider = ({ children }: UsersProviderProps) => {
-    const [state, dispatch] = useReducer(usersReducer, INITIAL_STATE);
-    return (
-        <UsersContext.Provider value={{ usersState: state, dispatch }}>
-            {children}
-        </UsersContext.Provider>
-    )
-}
+  const [state, dispatch] = useReducer(
+    usersReducer,
+    undefined, // undefined if we need a callback function to be the initializer
+    getInitialState
+  );
+
+  useEffect(() => {
+    localStorage.setItem("usersState", JSON.stringify(state));
+  }, [state]);
+
+  return (
+    <UsersContext.Provider value={{ usersState: state, dispatch }}>
+      {children}
+    </UsersContext.Provider>
+  );
+};

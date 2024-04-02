@@ -17,8 +17,8 @@ import { UsersContext } from "./context/UsersContext";
 import { ModalExit } from "./components/ModalExit";
 
 function App() {
-  const [showMenu, setShowMenu] = useState(false);
-  const [showConfirm, setShowConfirm] = useState(false);
+  const [showMenu, setShowMenu] = useState<boolean>(false);
+  const [showConfirm, setShowConfirm] = useState<boolean>(false);
   const { dispatch } = useContext(UsersContext);
   const navigate = useNavigate();
 
@@ -36,24 +36,29 @@ function App() {
 
   return (
     <div className="App">
-        {showMenu ? <Menu setShowConfirm={setShowConfirm} setShowMenu={setShowMenu} /> : <></>}
-        {showConfirm ? (
-          <ModalExit acceptFunction={resetGame} rejectFunction={hideConfirm} />
-        ) : (
-          <></>
-        )}
-        <Header setShowMenu={setShowMenu}  />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/intro" element={<Intro />} />
-          <Route path="/trick-or-treat" element={<TrickOrTreat />} />
-          <Route path="/question" element={<Question />} />
-          <Route path="/challenge" element={<Challenge />} />
-          <Route path="/confirmation" element={<Confirmation />} />
-          <Route path="/adding-points" element={<AddingPoints />} />
-          <Route path="/info" element={<InstructionsPage />} />
-          <Route path="/winner" element={<Winner />} />
-        </Routes>
+      {showMenu ? (
+        <Menu setShowConfirm={setShowConfirm} setShowMenu={setShowMenu} />
+      ) : (
+        <></>
+      )}
+      {showConfirm ? (
+        <ModalExit acceptFunction={resetGame} rejectFunction={hideConfirm} />
+      ) : (
+        <></>
+      )}
+      <Header setShowMenu={setShowMenu} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/intro" element={<Intro />} />
+        <Route path="/trick-or-treat" element={<TrickOrTreat />} />
+        <Route path="/question" element={<Question />} />
+        <Route path="/challenge" element={<Challenge />} />
+        <Route path="/confirmation" element={<Confirmation />} />
+        <Route path="/adding-points" element={<AddingPoints />} />
+        <Route path="/info" element={<InstructionsPage />} />
+        <Route path="/winner" element={<Winner />} />
+        <Route path="*" element={<Home />} />
+      </Routes>
     </div>
   );
 }

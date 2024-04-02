@@ -1,18 +1,13 @@
 import { useState } from "react";
+import { IModalInfoProps } from "../interfaces/interfaces";
 import { Modal, Overlay } from "./ModalStyles";
-
-type ModalInfoProps = {
-  title?: string;
-  message: string;
-  confirmFunction: () => void;
-};
 
 export const ModalInfo = ({
   title,
   message,
   confirmFunction,
-}: ModalInfoProps) => {
-  const [hide, setHide] = useState(false);
+}: IModalInfoProps) => {
+  const [hide, setHide] = useState<boolean>(false);
 
   const handleHide = () => {
     setHide(true);

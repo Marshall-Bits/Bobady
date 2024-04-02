@@ -22,14 +22,15 @@ export const Question = () => {
   const navigate = useNavigate();
   const { dispatch, usersState } = useContext(UsersContext);
   const { users, userTurnId } = usersState;
+  const [count, setCount] = useState<number>(10);
   const user = users.find((user) => user.id === userTurnId);
 
-  const [count, setCount] = useState<number>(10);
-
   const usedQuestionIds = user?.questions;
+
   const availableQuestionIds = questions
     .filter((question) => !usedQuestionIds?.includes(question.id))
     .map((question) => question.id);
+
   const randomQuestionId = useRef<number>(
     availableQuestionIds[
       Math.floor(Math.random() * availableQuestionIds.length)

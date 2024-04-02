@@ -8,15 +8,17 @@ const jsConfetti = new JSConfetti();
 
 export const AddingPoints = () => {
   const { usersState, dispatch } = useContext(UsersContext);
-  const pointsSet = useRef<boolean>(false);
   const { pointsToAdd, userTurnId, users } = usersState;
-  const user = users.find((user) => user.id === userTurnId);
+  const pointsSet = useRef<boolean>(false);
   const navigate = useNavigate();
+  const user = users.find((user) => user.id === userTurnId);
+
   useEffect(() => {
     if (pointsToAdd && pointsToAdd > 100) {
       jsConfetti.addConfetti();
     }
   }, [pointsToAdd]);
+
   useEffect(() => {
     if (pointsSet.current === false) {
       dispatch({
@@ -39,7 +41,7 @@ export const AddingPoints = () => {
           {pointsToAdd > 0 && <Logo />}
           <p className="question">
             {pointsToAdd > 0
-              ? `¡Bobady ${user?.name}! tienes ${pointsToAdd} puntos mas 😁`
+              ? `¡Oh yeah ${user?.name}! tienes ${pointsToAdd} puntos mas 😁`
               : `Sorry ${user?.name}, ${pointsToAdd} puntos 😓`}
           </p>
           <h2>Total: {user?.score}</h2>

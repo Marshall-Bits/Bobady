@@ -7,9 +7,9 @@ import { ModalInfo } from "../components/ModalInfo";
 
 const Home = () => {
   const { usersState } = useContext(UsersContext);
-  const [showModal, setShowModal] = useState(false);
   const { users } = usersState;
   const navigate = useNavigate();
+  const [showModal, setShowModal] = useState<boolean>(false);
 
   return (
     <>

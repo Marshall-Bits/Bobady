@@ -1,6 +1,6 @@
+import styled from 'styled-components';
 import React, { useContext, useState } from "react";
 import { UsersContext } from "../context/UsersContext";
-import styled from 'styled-components';
 
 const UserInputContainer = styled.form`
     display: flex;
@@ -22,8 +22,8 @@ const UserInputContainer = styled.form`
 `;
 
 export const UserInput = () => {
-    const [participantName, setParticipantName] = useState<string>('');
     const { dispatch } = useContext(UsersContext);
+    const [participantName, setParticipantName] = useState<string>('');
 
     const handleSubmit = (e: React.SyntheticEvent) => {
         const randomAvatar = Math.floor(Math.random() * 40);

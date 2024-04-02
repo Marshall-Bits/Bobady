@@ -44,21 +44,14 @@ const RegretButton = styled.button`
 export const Challenge = () => {
   const { usersState, dispatch } = useContext(UsersContext);
   const { users, userTurnId } = usersState;
+  const navigate = useNavigate();
+
   const user = users.find((user) => user.id === userTurnId);
 
-  useEffect(() => {
-    new Audio(challengeAccepted).play();
-  }, []);
-
-  const addPoints = (points: number) => {
-    dispatch({
-      type: "UPDATE_POINTS_TO_ADD",
-      payload: points,
-    });
-    navigate("/adding-points");
-  };
-
   const usedChallengeIds = user?.challenges;
+
+  const filteredUsers = users.filter((user) => user.id !== userTurnId);
+
   const availableChallengeIds = challenges
     .filter((challenge) => !usedChallengeIds?.includes(challenge.id))
     .map((challenge) => challenge.id);
@@ -66,8 +59,6 @@ export const Challenge = () => {
   const randomChallengeId = useRef<number>(
     Math.floor(Math.random() * availableChallengeIds.length)
   );
-
-  const filteredUsers = users.filter((user) => user.id !== userTurnId);
 
   const randomUserId = useRef<number>(
     Math.floor(Math.random() * filteredUsers.length)
@@ -79,6 +70,18 @@ export const Challenge = () => {
     randomChallengeId.current
   ].challenge.replace("[user]", randomUser.name);
 
+  const addPoints = (points: number) => {
+    dispatch({
+      type: "UPDATE_POINTS_TO_ADD",
+      payload: points,
+    });
+    navigate("/adding-points");
+  };
+
+  useEffect(() => {
+    new Audio(challengeAccepted).play();
+  }, []);
+
   const handleAnswer = (state: "finished" | "regret") => {
     user?.challenges.push(challenges[randomChallengeId.current].id);
     if (state === "finished") {
@@ -89,7 +92,6 @@ export const Challenge = () => {
     }
   };
 
-  const navigate = useNavigate();
   return (
     <>
       <p className="question">{formatedChallenge}</p>

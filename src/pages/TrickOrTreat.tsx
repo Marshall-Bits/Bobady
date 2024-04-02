@@ -34,10 +34,10 @@ const Container = styled.div`
 `;
 
 export const TrickOrTreat = () => {
-  const [randomUser, setRandomUser] = useState<IUser>();
   const { usersState, dispatch } = useContext(UsersContext);
-  const navigate = useNavigate();
   const { users } = usersState;
+  const [randomUser, setRandomUser] = useState<IUser>();
+  const navigate = useNavigate();
 
   const checkForWinner = () => {
     const allUsersReachedMaxTurns = users.every((user) => user.turns >= 10);
@@ -68,7 +68,6 @@ export const TrickOrTreat = () => {
   }, []);
 
   useEffect(() => {
-    console.log(randomUser);
     if (randomUser) {
       const updatedUser = { ...randomUser, turns: randomUser.turns + 1 };
       dispatch({

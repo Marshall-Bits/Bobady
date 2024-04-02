@@ -1,9 +1,8 @@
+import styled from 'styled-components';
 import { useState, useContext, useEffect } from 'react';
 import { UsersContext } from '../context/UsersContext';
-import { IUser } from '../interfaces/interfaces';
-import { Spinner } from './Spinner';
-import styled from 'styled-components';
 import { IAvatarProps } from '../interfaces/interfaces';
+import { Spinner } from './Spinner';
 
 const AvatarContainer = styled.div`
     position: relative;    

@@ -1,8 +1,5 @@
-import { ReactComponentElement } from "react";
-import { UsersContext } from "../context/UsersContext";
-import { useNavigate } from "react-router";
-import { ModalExit } from "./ModalExit";
 import styled from "styled-components";
+import { IResetButtonProps } from "../interfaces/interfaces";
 
 const ExitButton = styled.img`
   width: 30px;
@@ -13,11 +10,7 @@ const ExitButton = styled.img`
   cursor: pointer;
 `;
 
-type ResetButtonProps = {
-  setShowConfirm: (value: boolean) => void;
-};
-
-export const ResetButton = ({ setShowConfirm }: ResetButtonProps) => {
+export const ResetButton = ({ setShowConfirm }: IResetButtonProps) => {
   return (
     <>
       <ExitButton

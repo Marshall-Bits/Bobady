@@ -23,10 +23,18 @@ const WinnerContainer = styled.div`
 
 export const Winner = () => {
   const { usersState, dispatch } = useContext(UsersContext);
+  const navigate = useNavigate();
+
   const winner = usersState.users.reduce((prev, current) => {
     return prev.score > current.score ? prev : current;
   });
-  const navigate = useNavigate();
+
+  const handleResetGame = () => {
+    dispatch({
+      type: "RESET_GAME",
+    });
+    navigate("/");
+  };
 
   useEffect(() => {
     jsConfetti.addConfetti();
@@ -35,13 +43,6 @@ export const Winner = () => {
       jsConfetti.clearCanvas();
     };
   }, []);
-
-  const handleResetGame = () => {
-    dispatch({
-      type: "RESET_GAME",
-    });
-    navigate("/");
-  };
 
   return (
     <WinnerContainer>

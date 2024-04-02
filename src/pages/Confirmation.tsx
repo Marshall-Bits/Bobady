@@ -8,11 +8,13 @@ import fail from "../assets/sounds/fail.mp3";
 export const Confirmation = () => {
   const { usersState, dispatch } = useContext(UsersContext);
   const { userTurnId, users } = usersState;
-  const randomUser = useRef<IUser>();
   const navigate = useNavigate();
+  const randomUser = useRef<IUser>();
+
   const usersExcludingCurrentTurn = users.filter(
     (user) => user.id !== userTurnId
   );
+  
   randomUser.current =
     usersExcludingCurrentTurn[
       Math.floor(Math.random() * usersExcludingCurrentTurn.length)

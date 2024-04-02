@@ -11,8 +11,8 @@ const IntroContainer = styled.div`
 `;
 
 export const Intro = () => {
+  const [count, setCount] = useState<number>(3);
   const navigate = useNavigate();
-  const [count, setCount] = useState(3);
 
   useEffect(() => {
     if (count === 0) navigate("/trick-or-treat");
