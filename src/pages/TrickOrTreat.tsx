@@ -41,13 +41,15 @@ export const TrickOrTreat = () => {
 
   const checkForWinner = () => {
     const allUsersReachedMaxTurns = users.every((user) => user.turns >= 10);
-    if (allUsersReachedMaxTurns) {
+    const allUsersHaveDifferentScores =
+      new Set(users.map((user) => user.score)).size === users.length;
+    if (allUsersReachedMaxTurns && allUsersHaveDifferentScores) {
       navigate("/winner");
     }
   };
 
   useEffect(() => {
-    checkForWinner();
+    users && checkForWinner();
   }, [users]);
 
   useEffect(() => {

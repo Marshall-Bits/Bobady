@@ -3,6 +3,7 @@ import { useContext, useEffect } from "react";
 import styled from "styled-components";
 import JSConfetti from "js-confetti";
 import { useNavigate } from "react-router";
+import goodNight from "../assets/sounds/good-night.mp3";
 
 const jsConfetti = new JSConfetti();
 
@@ -29,6 +30,7 @@ export const Winner = () => {
 
   useEffect(() => {
     jsConfetti.addConfetti();
+    new Audio(goodNight).play();
     return () => {
       jsConfetti.clearCanvas();
     };
