@@ -113,7 +113,7 @@
   },
   {
     "id": 28,
-    "question": "¿Sufriste bulling en el cole?"
+    "question": "¿Alguna vez te has metido en una pelea?"
   },
   {
     "id": 29,
@@ -125,7 +125,7 @@
   },
   {
     "id": 31,
-    "question": "¿Te has acostado con la pareja de algun@ amig@?"
+    "question": "¿Te has acostado con la pareja de alguien de tu círculo de amistades?"
   },
   {
     "id": 32,
@@ -162,5 +162,25 @@
   {
     "id": 40,
     "question": "¿Alguna vez le has dicho a [user] 'te quiero'?"
+  },
+  {
+    "id": 41,
+    "question": "¿Crees que [user] te quiere?"
+  },
+  {
+    "id": 42,
+    "question": "¿Crees que [user] te cubriría el culo si se lo pidieras?"
+  },
+  {
+    "id": 43,
+    "question": "¿[user] te ha decepcionado alguna vez?"
+  },
+  {
+    "id": 44,
+    "question": "¿Alguna vez ibas tan mecedora que no te acuerdas de lo que hiciste?"
+  },
+  {
+    "id": 45,
+    "question": "¿Alguna vez has hecho pipi en una piscina siendo adulto?"
   }
 ]

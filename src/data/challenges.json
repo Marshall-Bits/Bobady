@@ -5,7 +5,7 @@
   },
   {
     "id": 1,
-    "challenge": "Dale un beso muy sonoro a [user] en la mejilla"
+    "challenge": "Dale un beso muy sonoro a [user] apretándole las mejillas como si fueras su tia abuela la del pueblo"
   },
   {
     "id": 2,
@@ -25,7 +25,7 @@
   },
   {
     "id": 6,
-    "challenge": "Une tu frente con la de [user] y canta el estribillo de 'Aserejé' de las Ketchup sin separaros"
+    "challenge": "Une tu frente con la de [user] y canta románticamente el estribillo de 'Aserejé' de las Ketchup sin separaros"
   },
   {
     "id": 7,
@@ -45,15 +45,15 @@
   },
   {
     "id": 11,
-    "challenge": "[user] te ha regalado un unicornio, hazle una reverencia y agradéceselo con un lenguaje antiguo"
+    "challenge": "[user] te ha regalado un unicornio, hazle una reverencia y agradéceselo formalmete como si de una obra de Shakespeare se tratara"
   },
   {
     "id": 12,
-    "challenge": "Siéntate en el regazo de [user] y pídele que haga realidad tu mayor deseo"
+    "challenge": "Siéntate en el regazo de [user] y pídele que haga realidad tu mayor deseo sexual"
   },
   {
     "id": 14,
-    "challenge": "Imita a [user] durante 1 minuto"
+    "challenge": "Confiésale tu amor a [user] después de descubrir que es descendiente de un alienígena rico y que su verdadero nombre es 'Zorgon'"
   },
   {
     "id": 15,
@@ -61,7 +61,7 @@
   },
   {
     "id": 16,
-    "challenge": "Imagina que [user] te ha invitado a cenar y su comida era horrible, finje tu respuesta cuando te pregunte si te ha gustado"
+    "challenge": "[user] te ha invitado a cenar, se le ha quemado todo y te lo has comido, haz una crítica constructiva con el acendto de Apu de los Simpson"
   },
   {
     "id": 17,
@@ -73,7 +73,7 @@
   },
   {
     "id": 19,
-    "challenge": "Eres una presentadora de teletienda y tienes que venderle a [user] una zanahoria pocha por 1000€"
+    "challenge": "Eres una presentadora de teletienda y tienes que venderle a [user] una lechuga pocha por 1000€"
   },
   {
     "id": 20,
@@ -93,7 +93,7 @@
   },
   {
     "id": 24,
-    "challenge": "Baila como Michael Jackson durante 1 minuto"
+    "challenge": "Inventa e interpreta un nuevo baile que mezcla a Michael Jackson y Chiquito de la Calzada"
   },
   {
     "id": 25,
@@ -105,11 +105,11 @@
   },
   {
     "id": 27,
-    "challenge": "Canta todas las preposiciones"
+    "challenge": "Canta todas las preposiciones añadiendo 'you know' al final de cada una"
   },
   {
     "id": 28,
-    "challenge": "Presentas un programa de cocina y tienes que enseñar a [user] a hacer una tortilla de patatas sin decir la palabra 'patata'"
+    "challenge": "Presentas un programa de cocina y tienes que enseñar a [user] a hacer una tortilla de patatas sin decir la palabra 'patata' ni 'tubérculo'"
   },
   {
     "id": 29,
@@ -121,7 +121,7 @@
   },
   {
     "id": 31,
-    "challenge": "Solamente existe la vocal 'o'. Cuéntanos una de tus fantasías sexuales sin usar otras vocales"
+    "challenge": "Solamente existe la vocal 'o'. Cuéntanos una fantasía sexual que ya has cumplido sin usar otras vocales"
   },
   {
     "id": 32,
@@ -141,7 +141,7 @@
   },
   {
     "id": 36,
-    "challenge": "Eres medio vaca, antes de cada palabra dices 'mu'. Cuéntanos una situación en la que alguien de tu grupo la ha liado parda"
+    "challenge": "Eres medio vaca, antes de cada palabra dices 'mu'. Cuéntanos una situación en la que alguien de tu grupo de amijis la ha liado parda"
   },
   {
     "id": 37,
@@ -158,5 +158,25 @@
   {
     "id": 40,
     "challenge": "Eres la reina del universo y todo el grupo debería hacer un reto que les plantees."
+  },
+  {
+    "id": 41,
+    "challenge": "Hazle pedorretas en el cuello a [user]"
+  },
+  {
+    "id": 42,
+    "challenge": "Métele un dedo en la nariz a [user]"
+  },
+  {
+    "id": 43,
+    "challenge": "Pídele matrimonio a [user] con una voz exageradamente aguda y aguantando algo en tu cabeza sin que se caiga"
+  },
+  {
+    "id": 44,
+    "challenge": "Di cosas bonitas y no tan bonitas a [user] mientras imitas a Smigol (cambias de opinión después de cada frase)"
+  },
+  {
+    "id": 45,
+    "challenge": "Dale un masaje en los pies a [user]"
   }
 ]
