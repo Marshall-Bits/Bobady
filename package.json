@@ -1,6 +1,5 @@
 {
-  "name": "partygame",
-  "private": true,
+  "name": "Bobady",
   "version": "0.9.0",
   "type": "module",
   "scripts": {
