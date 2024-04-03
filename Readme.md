@@ -22,6 +22,14 @@ The avatars in version 0.9 are taken from [Gartic Phone](https://garticphone.com
 ## Build
 Run `npm run build` to build the project. The build will be in the `dist` folder.
 
+## React Context API
+The player management is implemented using React Context API. 
+
+### Context files overview
+- `src/context/UsersContext.tsx` - It simply defines the UserContext to provide an consume the global state.
+- `src/context/UsersProvider.tsx` - Wrapper component to provide the UserContext to the whole application.
+- `src/context/usersReducer.ts` - The reducer function is a pure function that takes the previous state and an action, and returns the next state. This is where the logic for the state management is implemented. There is a few actions that can be dispatched to the reducer to update the global state.
+
 ## Questions and Challenges
 Questions and challenges are stored in json files in the `src/data` folder. 
 
