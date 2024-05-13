@@ -2,7 +2,10 @@ import { useEffect, useState } from "react";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
-const useFetchData = (list: "questions" | "challenges") => {
+const useFetchData = (
+  list: "questions" | "challenges",
+  category: "regular" | "spicy"
+) => {
   const [data, setData] = useState<any[]>([]);
 
   useEffect(() => {
