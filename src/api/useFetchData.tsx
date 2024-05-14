@@ -11,10 +11,7 @@ const useFetchData = (
   useEffect(() => {
     fetch(`${API_URL}/${list}?category=${category}`)
       .then((res) => res.json())
-      .then((data) => {
-        console.log("DATA FETCHED: ", data);
-        setData(data);
-      });
+      .then((data) => setData(data));
   }, [list]);
 
   return data;

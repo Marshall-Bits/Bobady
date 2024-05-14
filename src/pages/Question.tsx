@@ -1,7 +1,8 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { UsersContext } from "../context/UsersContext";
-import questions from "../data/questions.json";
+// import questions from "../data/questions.json";
+import { DataContext } from "../context/DataContext";
 import styled from "styled-components";
 import { Count } from "../components/Count";
 import yesSound from "../assets/sounds/yeah.mp3";
@@ -19,6 +20,7 @@ const QuestionContainer = styled.div`
 `;
 
 export const Question = () => {
+  const { questions } = useContext(DataContext);
   const navigate = useNavigate();
   const { dispatch, usersState } = useContext(UsersContext);
   const { users, userTurnId } = usersState;
@@ -28,14 +30,15 @@ export const Question = () => {
   const usedQuestionIds = user?.questions;
 
   const availableQuestionIds = questions
-    .filter((question) => !usedQuestionIds?.includes(question.id))
-    .map((question) => question.id);
+    .filter((question) => !usedQuestionIds?.includes(question._id))
+    .map((question) => question._id);
 
   const randomQuestionId = useRef<number>(
     availableQuestionIds[
       Math.floor(Math.random() * availableQuestionIds.length)
     ]
   );
+  console.log("RANDOM QUESTION ID: ", randomQuestionId.current);
 
   const filteredUsers = users.filter(
     (user) => user.id !== usersState.userTurnId
@@ -47,7 +50,11 @@ export const Question = () => {
 
   const randomUser = filteredUsers[randomUserId.current];
 
-  const formatedQuestion = questions[randomQuestionId.current].question.replace(
+  const selectedQuestion = questions.find(
+    (question) => question._id === randomQuestionId.current
+  );
+
+  const formattedQuestion = selectedQuestion.question.replace(
     "[user]",
     randomUser.name
   );
@@ -71,7 +78,7 @@ export const Question = () => {
   }, [count]);
 
   const handleAnswer = (answer: "yes" | "no" | "timeup") => {
-    user?.questions.push(questions[randomQuestionId.current].id);
+    user?.questions.push(randomQuestionId.current);
 
     if (answer === "yes") {
       new Audio(yesSound).play();
@@ -90,7 +97,7 @@ export const Question = () => {
 
   return (
     <QuestionContainer>
-      <p className="question">{formatedQuestion}</p>
+      <p className="question">{formattedQuestion}</p>
       <Count count={count} />
       <button onClick={() => handleAnswer("yes")}>Sí</button>
       <button onClick={() => handleAnswer("no")}>No</button>
