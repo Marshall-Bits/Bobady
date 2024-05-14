@@ -4,13 +4,16 @@ import App from "./App";
 import "./index.css";
 import { HashRouter as Router } from "react-router-dom";
 import { UsersProvider } from "./context/UsersProvider";
+import { DataProvider } from "./context/DataProvider";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <UsersProvider>
-      <Router>
-        <App />
-      </Router>
-    </UsersProvider>
+    <DataProvider>
+      <UsersProvider>
+        <Router>
+          <App />
+        </Router>
+      </UsersProvider>
+    </DataProvider>
   </React.StrictMode>
 );

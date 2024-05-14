@@ -9,9 +9,12 @@ const useFetchData = (
   const [data, setData] = useState<any[]>([]);
 
   useEffect(() => {
-    fetch(`${API_URL}/${list}`)
+    fetch(`${API_URL}/${list}?category=${category}`)
       .then((res) => res.json())
-      .then((data) => setData(data));
+      .then((data) => {
+        console.log("DATA FETCHED: ", data);
+        setData(data);
+      });
   }, [list]);
 
   return data;
