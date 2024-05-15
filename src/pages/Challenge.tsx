@@ -1,6 +1,5 @@
 import { useRef, useContext, useEffect } from "react";
 import { useNavigate } from "react-router";
-// import challenges from "../data/challenges.json";
 import { DataContext } from "../context/DataContext";
 import { UsersContext } from "../context/UsersContext";
 import styled from "styled-components";
@@ -44,8 +43,6 @@ const RegretButton = styled.button`
 
 export const Challenge = () => {
   const { challenges } = useContext(DataContext);
-  console.log("CHALLENGES: ", challenges);
-
   const { usersState, dispatch } = useContext(UsersContext);
   const { users, userTurnId } = usersState;
   const navigate = useNavigate();
@@ -54,23 +51,17 @@ export const Challenge = () => {
 
   const usedChallengeIds = user?.challenges;
 
-  console.log("USED CHALLENGE IDS: ", usedChallengeIds);
-
   const filteredUsers = users.filter((user) => user.id !== userTurnId);
 
   const availableChallengeIds = challenges
     .filter((challenge) => !usedChallengeIds?.includes(challenge._id))
     .map((challenge) => challenge._id);
 
-  console.log("AVAILABLE CHALLENGE IDS: ", availableChallengeIds);
-
   const randomChallengeId = useRef<number>(
     availableChallengeIds[
       Math.floor(Math.random() * availableChallengeIds.length)
     ]
   );
-
-  console.log("RANDOM CHALLENGE ID: ", randomChallengeId.current);
 
   const randomUserId = useRef<number>(
     Math.floor(Math.random() * filteredUsers.length)

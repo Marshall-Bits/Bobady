@@ -1,7 +1,6 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { UsersContext } from "../context/UsersContext";
-// import questions from "../data/questions.json";
 import { DataContext } from "../context/DataContext";
 import styled from "styled-components";
 import { Count } from "../components/Count";
@@ -38,7 +37,6 @@ export const Question = () => {
       Math.floor(Math.random() * availableQuestionIds.length)
     ]
   );
-  console.log("RANDOM QUESTION ID: ", randomQuestionId.current);
 
   const filteredUsers = users.filter(
     (user) => user.id !== usersState.userTurnId
