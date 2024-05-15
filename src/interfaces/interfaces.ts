@@ -41,3 +41,21 @@ export interface IUsersState {
   userTurnId?: number;
   pointsToAdd?: number;
 }
+
+interface ObjectId {
+  $oid: string;
+}
+
+interface Timestamp {
+  $date: string;
+}
+
+export interface IChallengeOrQuestion {
+  _id: ObjectId;
+  question?: string;
+  challenge?: string;
+  category: string;
+  createdAt: Timestamp;
+  updatedAt: Timestamp;
+  __v: number;
+}

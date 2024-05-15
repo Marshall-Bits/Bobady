@@ -1,7 +1,8 @@
 import { createContext } from "react";
+import { IChallengeOrQuestion } from "../interfaces/interfaces";
 
 export type DataContextProps = {
-  questions: any[];
+  questions: IChallengeOrQuestion[];
   challenges: any[];
   setCategory: (category: string) => void;
 };
