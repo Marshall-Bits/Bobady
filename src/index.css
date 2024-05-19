@@ -55,6 +55,12 @@ button:active {
   box-shadow: none;
 }
 
+.disabled {
+  background-color: rgb(167, 167, 167);
+  color: rgb(97, 97, 97);
+  cursor: not-allowed;
+}
+
 ul {
   list-style: none;
   display: flex;

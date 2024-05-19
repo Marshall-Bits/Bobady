@@ -30,6 +30,7 @@ const Home = () => {
             navigate("/intro");
           }
         }}
+        className={users.length <= 2 ? "disabled" : ""}
       >
         COMENZAR
       </button>
