@@ -48,7 +48,7 @@ export const InstructionsPage = () => {
       </p>
       <h3>Preguntas</h3>
       <p>
-        Si eliges pregunta, tendrás 10 segundos para responder Sí o No. ¡Ojito!
+        Si eliges pregunta, tendrás 10 segundos para responder. ¡Ojito!
         cuanto más rápido respondas, más puntos ganarás.
       </p>
       <p>
@@ -61,11 +61,10 @@ export const InstructionsPage = () => {
       </p>
       <p>
         Si no quieres hacer el reto debes decir el alto: ¡NOBADY! y pulsar el
-        botón rojo. ¡Pero cuidado! pulsando el botón pierdes puntos.
+        botón rojo. Pulsar NOBADY tiene una penalización de 100 puntos. 😈
       </p>
       <p>
-        Si un reto implica a otra persona, ella también podrá decir: ¡NOBADY! y
-        pulsar el botón rojo.
+        Si un reto implica a otra persona, ella tiene que expresar su consentimiento. En caso contrario también puede pulsar el botón rojo.
       </p>
       <p>
         Si el reto es superado, el juez deberá decir: ¡BOBADY! y lo celebraremos
