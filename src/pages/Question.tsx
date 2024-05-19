@@ -98,8 +98,12 @@ export const Question = () => {
     <QuestionContainer>
       <p className="question">{formattedQuestion}</p>
       <Count count={count} />
-      <button onClick={() => handleAnswer("yes")}>Sí</button>
-      <button onClick={() => handleAnswer("no")}>No</button>
+      <button onClick={() => handleAnswer("yes")}>
+        {selectedQuestion.neverEver ? "Me ha pasado" : "Sí"}
+      </button>
+      <button onClick={() => handleAnswer("no")}>
+        {selectedQuestion.neverEver ? "Nunca" : "No"}
+      </button>
     </QuestionContainer>
   );
 };

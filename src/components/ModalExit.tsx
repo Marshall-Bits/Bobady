@@ -1,12 +1,15 @@
 import { Modal, Overlay } from "./ModalStyles";
 import { useState } from "react";
 import { IModalExitProps } from "../interfaces/interfaces";
+import { useContext } from "react";
+import { DataContext } from "../context/DataContext";
 
 export const ModalExit = ({
   rejectFunction,
   acceptFunction,
 }: IModalExitProps) => {
   const [hide, setHide] = useState<boolean>(false);
+  const { setLoading } = useContext(DataContext);
 
   const handleReject = () => {
     setHide(true);
@@ -15,6 +18,7 @@ export const ModalExit = ({
 
   const handleAccept = () => {
     setHide(true);
+    setLoading(true);
     setTimeout(() => acceptFunction(), 300);
   };
 

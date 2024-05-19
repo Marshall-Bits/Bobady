@@ -3,7 +3,9 @@ import { createContext } from "react";
 export type DataContextProps = {
   questions: any[];
   challenges: any[];
-  setCategory: (category: string) => void;
+  getData: (category: string) => void;
+  loading: boolean;
+  setLoading: (value: boolean) => void;
 };
 
 export const DataContext = createContext<DataContextProps>(

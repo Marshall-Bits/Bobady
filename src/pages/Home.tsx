@@ -27,7 +27,7 @@ const Home = () => {
           if (users.length <= 2) {
             setShowModal(true);
           } else {
-            navigate("/intro");
+            navigate("/mode");
           }
         }}
         className={users.length <= 2 ? "disabled" : ""}

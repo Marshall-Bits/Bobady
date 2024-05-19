@@ -15,6 +15,7 @@ import { Winner } from "./pages/Winner";
 import { useNavigate } from "react-router-dom";
 import { UsersContext } from "./context/UsersContext";
 import { ModalExit } from "./components/ModalExit";
+import { ModePage } from "./pages/ModePage";
 
 function App() {
   const [showMenu, setShowMenu] = useState<boolean>(false);
@@ -57,6 +58,7 @@ function App() {
         <Route path="/adding-points" element={<AddingPoints />} />
         <Route path="/info" element={<InstructionsPage />} />
         <Route path="/winner" element={<Winner />} />
+        <Route path="/mode" element={<ModePage />} />
         <Route path="*" element={<Home />} />
       </Routes>
     </div>
