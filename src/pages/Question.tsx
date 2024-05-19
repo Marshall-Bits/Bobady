@@ -38,7 +38,6 @@ export const Question = () => {
       Math.floor(Math.random() * availableQuestionIds.length)
     ]
   );
-  console.log("RANDOM QUESTION ID: ", randomQuestionId.current);
 
   const filteredUsers = users.filter(
     (user) => user.id !== usersState.userTurnId
