@@ -50,7 +50,7 @@ interface Timestamp {
   $date: string;
 }
 
-export interface IChallengeOrQuestion {
+export interface IQuizElement {
   _id: ObjectId;
   question?: string;
   challenge?: string;
