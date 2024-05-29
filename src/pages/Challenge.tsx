@@ -1,11 +1,11 @@
 import { useRef, useContext, useEffect } from "react";
 import { useNavigate } from "react-router";
-// import challenges from "../data/challenges.json";
 import { DataContext } from "../context/DataContext";
 import { UsersContext } from "../context/UsersContext";
 import styled from "styled-components";
 import nobady from "../assets/sounds/nobady.mp3";
 import challengeAccepted from "../assets/sounds/challenge-accepted.mp3";
+import { ObjectId } from "../interfaces/interfaces";
 
 const RegretButton = styled.button`
   background-color: red;
@@ -59,7 +59,7 @@ export const Challenge = () => {
     .filter((challenge) => !usedChallengeIds?.includes(challenge._id))
     .map((challenge) => challenge._id);
 
-  const randomChallengeId = useRef<number>(
+  const randomChallengeId = useRef<ObjectId>(
     availableChallengeIds[
       Math.floor(Math.random() * availableChallengeIds.length)
     ]
@@ -75,10 +75,9 @@ export const Challenge = () => {
     (challenge) => challenge._id === randomChallengeId.current
   );
 
-  const formatedChallenge = selectedChallenge.challenge.replace(
-    "[user]",
-    randomUser.name
-  );
+  const formatedChallenge =
+    selectedChallenge?.challenge &&
+    selectedChallenge.challenge.replace("[user]", randomUser.name);
 
   const addPoints = (points: number) => {
     dispatch({
