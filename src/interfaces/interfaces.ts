@@ -32,8 +32,8 @@ export interface IUser {
   score: number;
   avatar: string;
   turns: number;
-  challenges: number[];
-  questions: number[];
+  challenges: ObjectId[];
+  questions: ObjectId[];
 }
 
 export interface IUsersState {
@@ -42,7 +42,7 @@ export interface IUsersState {
   pointsToAdd?: number;
 }
 
-interface ObjectId {
+export interface ObjectId {
   $oid: string;
 }
 
