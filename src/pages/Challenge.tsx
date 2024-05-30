@@ -5,7 +5,7 @@ import { UsersContext } from "../context/UsersContext";
 import styled from "styled-components";
 import nobady from "../assets/sounds/nobady.mp3";
 import challengeAccepted from "../assets/sounds/challenge-accepted.mp3";
-import { ObjectId } from "../interfaces/interfaces";
+import { IQuizElement, ObjectId } from "../interfaces/interfaces";
 
 const RegretButton = styled.button`
   background-color: red;
@@ -71,13 +71,13 @@ export const Challenge = () => {
 
   const randomUser = filteredUsers[randomUserId.current];
 
-  const selectedChallenge = challenges.find(
+  const selectedChallenge: IQuizElement | undefined = challenges.find(
     (challenge) => challenge._id === randomChallengeId.current
   );
 
   const formatedChallenge =
-    selectedChallenge?.challenge &&
-    selectedChallenge.challenge.replace("[user]", randomUser.name);
+    selectedChallenge &&
+    selectedChallenge.challenge?.replace("[user]", randomUser.name);
 
   const addPoints = (points: number) => {
     dispatch({
