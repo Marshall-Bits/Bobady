@@ -1,14 +1,16 @@
 import styled from "styled-components";
 
 export const HeaderContainer = styled.div`
-  position: fixed;
   top: 0;
   background-color: rgba(201, 29, 253, 0.322);
   width: 100vw;
-  height: 70px;
+  min-height: 70px;
+  max-height: 70px;
   padding: 0.4rem;
   padding-left: 1rem;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: 0.5rem;
   box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.7);
   overflow-x: scroll;
@@ -28,9 +30,7 @@ export const HeaderContainer = styled.div`
   #menu-btn {
     cursor: pointer;
     box-shadow: none;
-    position: absolute;
     right: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 1%;
   }
 `;

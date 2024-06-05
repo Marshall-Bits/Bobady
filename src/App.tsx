@@ -48,19 +48,21 @@ function App() {
         <></>
       )}
       <Header setShowMenu={setShowMenu} />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/intro" element={<Intro />} />
-        <Route path="/trick-or-treat" element={<TrickOrTreat />} />
-        <Route path="/question" element={<Question />} />
-        <Route path="/challenge" element={<Challenge />} />
-        <Route path="/confirmation" element={<Confirmation />} />
-        <Route path="/adding-points" element={<AddingPoints />} />
-        <Route path="/info" element={<InstructionsPage />} />
-        <Route path="/winner" element={<Winner />} />
-        <Route path="/mode" element={<ModePage />} />
-        <Route path="*" element={<Home />} />
-      </Routes>
+      <div id="pages-container">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/intro" element={<Intro />} />
+          <Route path="/trick-or-treat" element={<TrickOrTreat />} />
+          <Route path="/question" element={<Question />} />
+          <Route path="/challenge" element={<Challenge />} />
+          <Route path="/confirmation" element={<Confirmation />} />
+          <Route path="/adding-points" element={<AddingPoints />} />
+          <Route path="/info" element={<InstructionsPage />} />
+          <Route path="/winner" element={<Winner />} />
+          <Route path="/mode" element={<ModePage />} />
+          <Route path="*" element={<Home />} />
+        </Routes>
+      </div>
     </div>
   );
 }
