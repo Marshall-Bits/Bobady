@@ -8,7 +8,7 @@ export const MenuContainer = styled.div`
   color: rgb(255, 255, 115);
   display: flex;
   flex-direction: column;
-  font-size: 0.5rem;
+  font-size: 0.5em;
   height: 100%;
   position: fixed;
   right: 0;
@@ -43,6 +43,7 @@ export const MenuContainer = styled.div`
 
   #close-btn {
     width: 100%;
+    font-size: 30px;
     display: flex;
     justify-content: flex-end;
     padding: 1rem;

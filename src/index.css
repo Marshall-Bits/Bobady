@@ -87,3 +87,9 @@ a {
     background-size: 120% 120%;
   }
 }
+
+@media (height< 700px) {
+  body {
+    font-size: 16px;
+  }
+}
