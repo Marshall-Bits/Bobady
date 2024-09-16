@@ -8,6 +8,7 @@ import yesSound from "../assets/sounds/yeah.mp3";
 import noSound from "../assets/sounds/no.mp3";
 import time from "../assets/sounds/time.mp3";
 import crowdAw from "../assets/sounds/crowd-aw.mp3";
+import { ObjectId } from "../interfaces/interfaces";
 
 const QuestionContainer = styled.div`
   display: flex;
@@ -32,7 +33,7 @@ export const Question = () => {
     .filter((question) => !usedQuestionIds?.includes(question._id))
     .map((question) => question._id);
 
-  const randomQuestionId = useRef<any>(
+  const randomQuestionId = useRef<ObjectId>(
     availableQuestionIds[
       Math.floor(Math.random() * availableQuestionIds.length)
     ]
