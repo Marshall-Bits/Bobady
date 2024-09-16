@@ -2,7 +2,7 @@ import { createContext } from "react";
 import { IQuizElement } from "../interfaces/interfaces";
 
 export type DataContextProps = {
-  questions: IQuizElement[];
+  questions: IQuizElement[] | [];
   challenges: IQuizElement[];
   // setCategory: (category: string) => void;
   getData: (category: string) => void;

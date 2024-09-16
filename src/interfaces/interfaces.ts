@@ -53,6 +53,7 @@ interface Timestamp {
 export interface IQuizElement {
   _id: ObjectId;
   question?: string;
+  neverEver?: boolean;
   challenge?: string;
   category: string;
   createdAt: Timestamp;

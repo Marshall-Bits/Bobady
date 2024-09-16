@@ -28,11 +28,11 @@ export const Question = () => {
 
   const usedQuestionIds = user?.questions;
 
-  const availableQuestionIds = questions
+  const availableQuestionIds = (questions ?? [])
     .filter((question) => !usedQuestionIds?.includes(question._id))
     .map((question) => question._id);
 
-  const randomQuestionId = useRef<number>(
+  const randomQuestionId = useRef<any>(
     availableQuestionIds[
       Math.floor(Math.random() * availableQuestionIds.length)
     ]
@@ -52,7 +52,7 @@ export const Question = () => {
     (question) => question._id === randomQuestionId.current
   );
 
-  const formattedQuestion = selectedQuestion.question.replace(
+  const formattedQuestion = selectedQuestion?.question?.replace(
     "[user]",
     randomUser.name
   );
@@ -98,10 +98,10 @@ export const Question = () => {
       <p className="question">{formattedQuestion}</p>
       <Count count={count} />
       <button onClick={() => handleAnswer("yes")}>
-        {selectedQuestion.neverEver ? "Me ha pasado" : "Sí"}
+        {selectedQuestion?.neverEver ? "Me ha pasado" : "Sí"}
       </button>
       <button onClick={() => handleAnswer("no")}>
-        {selectedQuestion.neverEver ? "Nunca" : "No"}
+        {selectedQuestion?.neverEver ? "Nunca" : "No"}
       </button>
     </QuestionContainer>
   );
