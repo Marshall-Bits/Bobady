@@ -7,13 +7,11 @@ import { UsersProvider } from "./context/UsersProvider";
 import { DataProvider } from "./context/DataProvider";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <React.StrictMode>
-    <DataProvider>
-      <UsersProvider>
-        <Router>
-          <App />
-        </Router>
-      </UsersProvider>
-    </DataProvider>
-  </React.StrictMode>
+  <DataProvider>
+    <UsersProvider>
+      <Router>
+        <App />
+      </Router>
+    </UsersProvider>
+  </DataProvider>
 );
